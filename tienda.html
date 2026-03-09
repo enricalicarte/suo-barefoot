@@ -3,92 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Barcelona - Sant Antoni | SÛO Barcelona</title>
-    <meta name="description" content="Visita nuestra tienda de calzado barefoot en Barcelona.">
+    <title>Barcelona Store | SÛO Barcelona</title>
+    <meta name="description" content="Visita nuestra tienda de calzado barefoot en Sant Antoni, Barcelona. Asesoramiento personalizado y análisis de pisada.">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="ES-CT">
+    <meta name="geo.placename" content="Barcelona, Sant Antoni">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>window.SITE_ROOT = '';</script>
+    
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">S Û O</a>
-            <nav class="nav-desktop">
-                <a href="catalogo/index.html">Catálogo</a>
-                <a href="marcas/index.html">Marcas</a>
-                <a href="blog/index.html">Diario Podal</a>
-                <a href="tienda.html">Barcelona Store</a>
-                <a href="sobre.html">Sobre SÛO</a>
-            </nav>
-            <button class="menu-toggle" onclick="document.querySelector('.nav-mobile').classList.toggle('active'); this.classList.toggle('active');">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-    <nav class="nav-mobile">
-        <a href="catalogo/index.html">Catálogo</a>
-        <a href="marcas/index.html">Marcas</a>
-        <a href="blog/index.html">Diario Podal</a>
-        <a href="tienda.html">Barcelona Store</a>
-        <a href="sobre.html">Sobre SÛO</a>
-    </nav>
     <main>
 
-    <div class="page-header">
-        <span class="tag">Manso 43 · Barcelona</span>
-        <h1>SÛO <em>Sant Antoni</em></h1>
-        <p>Un espacio diseñado para reconectar con tu movimiento natural.</p>
-    </div>
+    <section class="page-hero">
+        <nav class="breadcrumb"><a href="index.html">Inicio</a> / <span>Barcelona Store</span></nav>
+        <h1>Nuestra Tienda</h1>
+        <p>Un espacio donde el pie es el protagonista.</p>
+    </section>
 
-    <div class="store-info">
-        <div class="store-info-item"><p class="label">📍 Dirección</p><p>Carrer de Manso, 43<br>08015 Barcelona</p></div>
-        <div class="store-info-item"><p class="label">🕐 Horario</p><p>L-V: 10:00-20:00<br>S: 10:00-14:00</p></div>
-        <div class="store-info-item"><p class="label">📞 Teléfono</p><p>+34 931 234 567</p></div>
-        <div class="store-info-item"><p class="label">✉️ Email</p><p>hola@suo.barcelona</p></div>
-    </div>
+    <section class="tienda-info">
+        <div class="tienda-grid">
+            <div class="tienda-content">
+                <h2>Visítanos en Sant Antoni</h2>
+                <p>SÛO es más que una tienda: es un punto de encuentro para familias que buscan un calzado diferente. Aquí no vendemos por tallas, vendemos por pies. Te escuchamos, medimos y asesoramos.</p>
+                
+                <div class="tienda-datos">
+                    <div class="dato">
+                        <h4>Dirección</h4>
+                        <p data-tienda="direccion-completa">Carrer de Manso, 43, 08015 Sant Antoni, Barcelona</p>
+                    </div>
+                    <div class="dato">
+                        <h4>Teléfono</h4>
+                        <p><a href="tel:+34642133612" data-tienda="telefono">+34 642 133 612</a></p>
+                    </div>
+                    <div class="dato">
+                        <h4>Horario</h4>
+                        <p data-tienda="horario">10:00-13:30 · 16:30-19:30</p>
+                    </div>
+                </div>
 
-    <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
-        <a href="https://maps.google.com/?q=Carrer+de+Manso+43+Barcelona" target="_blank" class="btn-primary">Abrir en Google Maps</a>
-    </div>
+                <a href="https://maps.google.com/?q=Carrer+de+Manso+43+Barcelona" target="_blank" class="btn-primary" style="margin-top: 1.5rem;">Abrir en Google Maps</a>
+            </div>
+            <div class="tienda-mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.8!2d2.1612!3d41.3768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDIyJzM2LjUiTiAywrA5JzQwLjMiRQ!5e0!3m2!1ses!2ses!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
 
-    <section class="filosofia-section">
-        <div class="filosofia-container" style="text-align: center;">
-            <h2>Servicios en tienda</h2>
-            <div class="servicios-grid">
-                <div class="servicio-item"><span class="servicio-icon">👣</span><h3>Análisis de Pisada</h3><p>Evaluación gratuita de tu forma de caminar.</p></div>
-                <div class="servicio-item"><span class="servicio-icon">📏</span><h3>Medición Profesional</h3><p>Encontramos tu talla perfecta.</p></div>
-                <div class="servicio-item"><span class="servicio-icon">🎓</span><h3>Guía de Transición</h3><p>Te acompañamos al minimalismo.</p></div>
+    <section class="servicios-section">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio">
+                <h3>Medición del Pie</h3>
+                <p>Usamos herramientas profesionales para medir longitud, anchura y volumen del pie. Gratis y sin compromiso.</p>
+            </div>
+            <div class="servicio">
+                <h3>Asesoramiento</h3>
+                <p>Te explicamos las diferencias entre marcas y modelos para que encuentres el calzado ideal según tu uso.</p>
+            </div>
+            <div class="servicio">
+                <h3>Transición Barefoot</h3>
+                <p>Si vienes del calzado convencional, te guiamos paso a paso en la transición al minimalismo.</p>
             </div>
         </div>
     </section>
 
     </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>SÛO</h3>
-                <p>Barcelona · Sant Antoni. Curaduría de calzado respetuoso para almas que buscan libertad.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Boutique</h4>
-                <ul>
-                    <li><a href="catalogo/index.html">Catálogo</a></li>
-                    <li><a href="marcas/index.html">Marcas</a></li>
-                    <li><a href="blog/index.html">Diario Podal</a></li>
-                    <li><a href="sobre.html">Sobre SÛO</a></li>
-                    <li><a href="tienda.html">Barcelona Store</a></li>
-                </ul>
-            </div>
-            <div class="footer-location">
-                <h4>Localización</h4>
-                <p>Carrer de Manso, 43<br>08015, Sant Antoni, Barcelona</p>
-                <p style="margin-top: 0.5rem;">+34 931 234 567</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 SÛO Barcelona</p>
-        </div>
-    </footer>
+    <script src="js/site.js"></script>
 </body>
 </html>

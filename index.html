@@ -4,35 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calzado Barefoot en Barcelona | SÛO Barcelona</title>
-    <meta name="description" content="SÛO - Tienda de calzado barefoot en Barcelona.">
+    <meta name="description" content="SÛO - Tienda de calzado barefoot en Barcelona. 227 modelos de 12 marcas. Visítanos en Sant Antoni.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://enricalicarte.github.io/suo-barefoot/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calzado Barefoot en Barcelona | SÛO Barcelona">
+    <meta property="og:description" content="SÛO - Tienda de calzado barefoot en Barcelona. 227 modelos de 12 marcas. Visítanos en Sant Antoni.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="ES-CT">
+    <meta name="geo.placename" content="Barcelona, Sant Antoni">
+    <meta name="geo.position" content="41.3768;2.1612">
+    <meta name="ICBM" content="41.3768, 2.1612">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>window.SITE_ROOT = '';</script>
+    
+    <style>
+        .hero { position: relative; min-height: calc(100vh - 70px); display: flex; flex-direction: column; justify-content: center; padding: 4rem 2rem; max-width: 1400px; margin: 0 auto; }
+        .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 45%; height: 100%; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80') center/cover; opacity: 0.15; z-index: -1; }
+        .featured-image { height: 320px; background-size: cover; background-position: center; margin-bottom: 1rem; position: relative; }
+        .featured-card:nth-child(1) .featured-image { background: linear-gradient(165deg, #e8e5e0 0%, #d4d0c8 100%); }
+        .featured-card:nth-child(2) .featured-image { background: linear-gradient(165deg, #f0ede8 0%, #e5e0d8 100%); }
+        .featured-card:nth-child(3) .featured-image { background: linear-gradient(165deg, #ece8e3 0%, #ddd8d0 100%); }
+        .featured-card:nth-child(4) .featured-image { background: linear-gradient(165deg, #f5f2ed 0%, #e8e4dc 100%); }
+        .category-image { height: 200px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
+        .category-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(107,122,61,0.7), rgba(107,122,61,0.3)); }
+        .category-image .cat-icon { position: relative; z-index: 1; font-size: 3rem; opacity: 0.9; }
+        .category-card:first-child .category-image { background-image: url('https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=600&q=80'); }
+        .category-card:last-child .category-image { background-image: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80'); }
+        .filosofia-section { background: linear-gradient(rgba(107,122,61,0.92), rgba(107,122,61,0.95)), url('https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1200&q=80') center/cover; }
+        .tienda-card { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--gray-border); align-items: center; }
+        .tienda-image { height: 280px; background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80') center/cover; border-radius: 2px; }
+        .tienda-text { padding: 1rem 0; }
+        .tienda-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; font-style: italic; color: var(--olive); margin-bottom: 0.75rem; }
+        .tienda-text p { font-size: 0.9rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .hero::before { width: 100%; opacity: 0.08; } .tienda-card { grid-template-columns: 1fr; } .tienda-image { height: 200px; } }
+    </style>
+
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">S Û O</a>
-            <nav class="nav-desktop">
-                <a href="catalogo/index.html">Catálogo</a>
-                <a href="marcas/index.html">Marcas</a>
-                <a href="blog/index.html">Diario Podal</a>
-                <a href="tienda.html">Barcelona Store</a>
-                <a href="sobre.html">Sobre SÛO</a>
-            </nav>
-            <button class="menu-toggle" onclick="document.querySelector('.nav-mobile').classList.toggle('active'); this.classList.toggle('active');">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
-    <nav class="nav-mobile">
-        <a href="catalogo/index.html">Catálogo</a>
-        <a href="marcas/index.html">Marcas</a>
-        <a href="blog/index.html">Diario Podal</a>
-        <a href="tienda.html">Barcelona Store</a>
-        <a href="sobre.html">Sobre SÛO</a>
-    </nav>
     <main>
 
     <section class="hero">
@@ -44,14 +61,59 @@
         </div>
     </section>
 
+    <section class="featured-section">
+        <div class="featured-header">
+            <span class="featured-tag">Primavera · Verano 2026</span>
+            <h2>Lo más buscado</h2>
+        </div>
+        <div class="featured-grid">
+            <a href="catalogo/joma-mundial-junior-barefoot-marino-2603.html" class="featured-card">
+                <div class="featured-image"><span class="featured-badge">Joma</span></div>
+                <div class="featured-info">
+                    <span class="featured-category">Infantil</span>
+                    <h3>Mundial Junior Marino</h3>
+                    <span class="featured-price">52€</span>
+                </div>
+            </a>
+            <a href="catalogo/flexinens-octoflexi-orion-beige-nude-9001-r.html" class="featured-card">
+                <div class="featured-image"><span class="featured-badge">Flexinens</span></div>
+                <div class="featured-info">
+                    <span class="featured-category">Infantil</span>
+                    <h3>Octoflexi Orion Beige</h3>
+                    <span class="featured-price">63€</span>
+                </div>
+            </a>
+            <a href="catalogo/flexinens-seaqualxl-andromeda-irisflexirosa-lila-fucsia-9110-r.html" class="featured-card">
+                <div class="featured-image"><span class="featured-badge">Flexinens</span></div>
+                <div class="featured-info">
+                    <span class="featured-category">Infantil</span>
+                    <h3>Seaqualxl Andromeda</h3>
+                    <span class="featured-price">57€</span>
+                </div>
+            </a>
+            <a href="catalogo/muris-nuuk-woman-nude-mu-nuuk-sh-nudec.html" class="featured-card">
+                <div class="featured-image"><span class="featured-badge">Muris</span></div>
+                <div class="featured-info">
+                    <span class="featured-category">Mujer</span>
+                    <h3>Nuuk Woman Nude</h3>
+                    <span class="featured-price">96€</span>
+                </div>
+            </a>
+        </div>
+        <div class="featured-cta">
+            <a href="catalogo/index.html" class="btn-outline">Ver todo el catálogo →</a>
+        </div>
+    </section>
+
     <section class="tienda-card-section">
         <div class="tienda-card">
-            <div class="tienda-icon">
-                <svg viewBox="0 0 24 24" fill="#6B7A3D"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="tienda-content">
+            <div class="tienda-image"></div>
+            <div class="tienda-text">
                 <h2>En el corazón de Sant Antoni</h2>
-                <p>Visítanos en Carrer de Manso 43 para un asesoramiento personalizado sobre tu transición al minimalismo.</p>
+                <p>Visítanos en <strong data-tienda="direccion">Carrer de Manso, 43, Sant Antoni</strong> para un asesoramiento personalizado. Analizamos tu pisada y te ayudamos a encontrar el calzado perfecto.</p>
+                <p style="font-size: 0.85rem; color: #6B7A3D; margin-bottom: 1.5rem;">
+                    <strong data-tienda="horario">10:00-13:30 · 16:30-19:30</strong>
+                </p>
                 <a href="tienda.html" class="btn-outline">Cómo Llegar</a>
             </div>
         </div>
@@ -63,17 +125,17 @@
             <h2>Nuestra Selección</h2>
         </div>
         <div class="seleccion-grid">
-            <a href="catalogo/index.html?familia=mujer" class="category-card">
+            <a href="catalogo/index.html" class="category-card">
                 <div class="category-image"><span class="cat-icon">👠</span></div>
                 <div class="category-info">
-                    <div><h3>Mujeres y Mamás</h3><span>69 productos</span></div>
+                    <div><h3>Mujeres y Mamás</h3><span>80 productos</span></div>
                     <span class="arrow">→</span>
                 </div>
             </a>
-            <a href="catalogo/index.html?familia=infantil" class="category-card">
+            <a href="catalogo/index.html" class="category-card">
                 <div class="category-image"><span class="cat-icon">👟</span></div>
                 <div class="category-info">
-                    <div><h3>Pequeños Pasos</h3><span>143 productos</span></div>
+                    <div><h3>Pequeños Pasos</h3><span>145 productos</span></div>
                     <span class="arrow">→</span>
                 </div>
             </a>
@@ -98,32 +160,15 @@
         </div>
     </section>
 
+    <section class="faq-section">
+        <div class="faq-section-header">
+            <span>Resolvemos tus dudas</span>
+            <h2>Preguntas Frecuentes</h2>
+        </div>
+        <div id="faq-tienda"></div>
+    </section>
+
     </main>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>SÛO</h3>
-                <p>Barcelona · Sant Antoni. Curaduría de calzado respetuoso para almas que buscan libertad.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Boutique</h4>
-                <ul>
-                    <li><a href="catalogo/index.html">Catálogo</a></li>
-                    <li><a href="marcas/index.html">Marcas</a></li>
-                    <li><a href="blog/index.html">Diario Podal</a></li>
-                    <li><a href="sobre.html">Sobre SÛO</a></li>
-                    <li><a href="tienda.html">Barcelona Store</a></li>
-                </ul>
-            </div>
-            <div class="footer-location">
-                <h4>Localización</h4>
-                <p>Carrer de Manso, 43<br>08015, Sant Antoni, Barcelona</p>
-                <p style="margin-top: 0.5rem;">+34 931 234 567</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 SÛO Barcelona</p>
-        </div>
-    </footer>
+    <script src="js/site.js"></script>
 </body>
 </html>
