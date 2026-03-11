@@ -1275,7 +1275,268 @@ details[open] .faq-icon { transform: rotate(180deg); }
 .product-cta .btn-primary { margin-right: 0.75rem; }
 
 /* ========================================
-   BRANDS GRID
+   BRANDS INDEX - NUEVO DISEÑO
+======================================== */
+.marcas-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem;
+    text-align: center;
+}
+.marcas-intro p {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+}
+
+.marcas-grid-nuevo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.marca-card-nuevo {
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+}
+.marca-card-nuevo:hover {
+    border-color: var(--olive);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+}
+.marca-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 0;
+}
+.marca-logo-nuevo {
+    width: 50px;
+    height: 50px;
+    background: var(--olive);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--white);
+}
+.marca-meta {
+    text-align: right;
+}
+.marca-origen {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 0.25rem;
+}
+.marca-count {
+    font-size: 0.75rem;
+    color: var(--olive);
+    font-weight: 500;
+}
+.marca-card-body {
+    padding: 1.25rem 1.5rem;
+    flex-grow: 1;
+}
+.marca-card-body h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 0.4rem;
+}
+.marca-especialidad {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+}
+.marca-card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--gray-border);
+}
+.ver-marca {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--olive);
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+    .marcas-grid-nuevo { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .marcas-grid-nuevo { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   BRAND DETAIL PAGE
+======================================== */
+.marca-hero {
+    padding: 2rem 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.marca-hero-content {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid var(--gray-border);
+}
+.marca-hero-logo {
+    width: 100px;
+    height: 100px;
+    background: var(--olive);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--white);
+    flex-shrink: 0;
+}
+.marca-hero-info {
+    flex-grow: 1;
+}
+.marca-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.marca-tag {
+    padding: 0.4rem 0.9rem;
+    background: var(--gray-light);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--olive);
+}
+.marca-hero-info h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+.marca-hero-desc {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.marca-filosofia {
+    background: var(--gray-light);
+    padding: 3rem 2rem;
+}
+.marca-filosofia-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.marca-filosofia h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1rem;
+}
+.marca-filosofia p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.85;
+}
+
+.marca-productos {
+    padding: 3rem 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.marca-productos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-border);
+}
+.marca-productos-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+}
+.marca-productos-header span {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+}
+
+.marca-cta {
+    background: var(--olive);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.marca-cta p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+.marca-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.marca-cta .btn-outline {
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+}
+.marca-cta .btn-outline:hover {
+    background: var(--white);
+    color: var(--olive);
+}
+.marca-cta .btn-primary {
+    background: var(--white);
+    color: var(--olive);
+}
+.marca-cta .btn-primary:hover {
+    background: var(--cream);
+}
+
+@media (max-width: 700px) {
+    .marca-hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .marca-hero-info h1 { font-size: 2rem; }
+    .marca-tags { justify-content: center; }
+}
+
+/* ========================================
+   BRANDS GRID (legacy)
 ======================================== */
 .brands-grid {
     display: grid;
