@@ -28,7 +28,7 @@
     
     <style>
         .hero { position: relative; min-height: calc(100vh - 70px); display: flex; flex-direction: column; justify-content: center; padding: 4rem 2rem; max-width: 1400px; margin: 0 auto; }
-        .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 45%; height: 100%; background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80') center/cover; opacity: 0.15; z-index: -1; }
+        .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 45%; height: 100%; background: url('https://images.unsplash.com/photo-1603080873519-cf21dd9cf006?w=800&q=80') center/cover; opacity: 0.2; z-index: -1; background-position: center right; }
         .featured-image { height: 320px; background-size: cover; background-position: center; margin-bottom: 1rem; position: relative; }
         .featured-card:nth-child(1) .featured-image { background: linear-gradient(165deg, #e8e5e0 0%, #d4d0c8 100%); }
         .featured-card:nth-child(2) .featured-image { background: linear-gradient(165deg, #f0ede8 0%, #e5e0d8 100%); }
@@ -37,15 +37,16 @@
         .category-image { height: 200px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
         .category-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(107,122,61,0.7), rgba(107,122,61,0.3)); }
         .category-image .cat-icon { position: relative; z-index: 1; font-size: 3rem; opacity: 0.9; }
-        .category-card:first-child .category-image { background-image: url('https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=600&q=80'); }
+        .category-card:first-child .category-image { background-image: url('https://images.unsplash.com/photo-1596395366619-1d95cb3a4f3f?w=600&q=80'); background-position: center; }
         .category-card:last-child .category-image { background-image: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80'); }
-        .filosofia-section { background: linear-gradient(rgba(107,122,61,0.92), rgba(107,122,61,0.95)), url('https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=1200&q=80') center/cover; }
+        .filosofia-section { background: linear-gradient(rgba(107,122,61,0.92), rgba(107,122,61,0.95)), url('https://images.unsplash.com/photo-1528148343865-15618c4fb4e7?w=1200&q=80') center/cover; background-position: center; }
         .tienda-card { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--gray-border); align-items: center; }
-        .tienda-image { height: 280px; background: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80') center/cover; border-radius: 2px; }
+        .tienda-image { height: 280px; background: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80') center/cover; border-radius: 2px; background-position: center; }
         .tienda-text { padding: 1rem 0; }
         .tienda-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; font-style: italic; color: var(--olive); margin-bottom: 0.75rem; }
         .tienda-text p { font-size: 0.9rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 1rem; }
-        @media (max-width: 768px) { .hero::before { width: 100%; opacity: 0.08; } .tienda-card { grid-template-columns: 1fr; } .tienda-image { height: 200px; } }
+        .story-image { height: 400px; background: url('https://images.unsplash.com/photo-1596395366619-1d95cb3a4f3f?w=600&q=80') center/cover; border-radius: 2px; background-position: center; }
+        @media (max-width: 768px) { .hero::before { width: 100%; opacity: 0.1; } .tienda-card { grid-template-columns: 1fr; } .tienda-image { height: 200px; } .story-image { height: 300px; } }
     </style>
 
 </head>
@@ -127,6 +128,174 @@
         </div>
     </section>
 
+    <!-- SECCIÓN: ÚLTIMOS ARTÍCULOS DEL BLOG -->
+    <section class="blog-preview-section">
+        <div class="blog-preview-header">
+            <h2>Diario Podal</h2>
+            <p>Guías, consejos y ciencia sobre barefoot</p>
+        </div>
+        <div class="blog-preview-grid">
+            <article class="blog-preview-card">
+                <div class="blog-preview-tag">Fundamentos</div>
+                <h3><a href="blog/que-es-calzado-barefoot.html">¿Qué es el calzado barefoot?</a></h3>
+                <p>Todo lo que necesitas saber sobre el calzado minimalista: características, beneficios y cómo elegir el modelo adecuado.</p>
+                <a href="blog/que-es-calzado-barefoot.html" class="blog-preview-link">Leer →</a>
+            </article>
+            <article class="blog-preview-card">
+                <div class="blog-preview-tag">Salud</div>
+                <h3><a href="blog/beneficios-barefoot.html">Beneficios del calzado barefoot</a></h3>
+                <p>Descubre cómo el calzado minimalista mejora tu postura, fortalece tus pies y previene lesiones.</p>
+                <a href="blog/beneficios-barefoot.html" class="blog-preview-link">Leer →</a>
+            </article>
+            <article class="blog-preview-card">
+                <div class="blog-preview-tag">Desarrollo Infantil</div>
+                <h3><a href="blog/barefoot-ninos.html">Barefoot para niños</a></h3>
+                <p>Por qué el calzado minimalista es crucial para que los pies de tus hijos se desarrollen correctamente.</p>
+                <a href="blog/barefoot-ninos.html" class="blog-preview-link">Leer →</a>
+            </article>
+        </div>
+        <div class="blog-preview-cta">
+            <a href="blog/index.html" class="btn-outline">Ver todos los artículos →</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CARACTERÍSTICAS BAREFOOT -->
+    <section class="features-section">
+        <div class="features-header">
+            <h2>¿Por qué barefoot?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🦶</div>
+                <h3>Libertad Natural</h3>
+                <p>Suela fina y flexible que permite que tu pie se mueva como fue diseñado por la naturaleza.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💪</div>
+                <h3>Fortalecimiento</h3>
+                <p>Los músculos intrínsecos se activan naturalmente, creando pies más fuertes y resilientes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <h3>Mejor Postura</h3>
+                <p>Sin restricción artificial, tu cuerpo encuentra su alineación natural desde los pies hacia arriba.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Conexión Sensorial</h3>
+                <p>Siente el terreno bajo tus pies y mejora tu equilibrio y propiocepción significativamente.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👣</div>
+                <h3>Sin Dolor</h3>
+                <p>Muchas personas reportan desaparición de dolor crónico tras transicionar a barefoot.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">♻️</div>
+                <h3>Sostenible</h3>
+                <p>Durabilidad superior y menos reemplazo significa menor impacto ambiental.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: MARCAS DESTACADAS -->
+    <section class="featured-brands-section">
+        <div class="featured-brands-header">
+            <span>Nuestras Marcas</span>
+            <h2>Curaduría Selecta</h2>
+            <p>12 marcas de calidad que respetan la biomecánica natural</p>
+        </div>
+        <div class="featured-brands-grid">
+            <div class="featured-brand-item">
+                <div class="brand-circle">F</div>
+                <h3>Flexinens</h3>
+                <span class="brand-origin">España</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">M</div>
+                <h3>Muris</h3>
+                <span class="brand-origin">Portugal</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">J</div>
+                <h3>Joma</h3>
+                <span class="brand-origin">España</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">V</div>
+                <h3>Victoria</h3>
+                <span class="brand-origin">España</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">I</div>
+                <h3>Igor</h3>
+                <span class="brand-origin">España</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">S</div>
+                <h3>Saguaro</h3>
+                <span class="brand-origin">España</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">M</div>
+                <h3>Mustang</h3>
+                <span class="brand-origin">Alemania</span>
+            </div>
+            <div class="featured-brand-item">
+                <div class="brand-circle">C</div>
+                <h3>Chetto</h3>
+                <span class="brand-origin">España</span>
+            </div>
+        </div>
+        <!-- <div class="featured-brands-cta">
+            <a href="marcas/index.html" class="btn-outline">Descubre todas nuestras marcas →</a>
+        </div> -->
+    </section>
+
+    <!-- SECCIÓN: TESTIMONIO / HISTORIA -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-content">
+                <h2>Una historia de pies felices</h2>
+                <p class="story-lead">En SÛO creemos que los pies son el fundamento de nuestra salud. No son simplemente el soporte que nos lleva de un lado a otro—son estructuras complejas, inteligentes y sofisticadas que merecen libertad.</p>
+                <p>Nuestro viaje comenzó con una pregunta simple: ¿por qué los zapatos modernos deforman algo tan perfecto? La respuesta nos llevó a descubrir marcas que entienden la biomecánica natural y respetan la forma en que nuestros pies fueron diseñados para funcionar.</p>
+                <p>Hoy, cada día en nuestra tienda de Sant Antoni es una oportunidad de ayudar a personas a recuperar la conexión con sus pies. De ver cómo la comodidad regresa, cómo el dolor desaparece, cómo la confianza se reconstruye desde el suelo hacia arriba.</p>
+                <div class="story-quote">
+                    <p>"Los pies son el puente entre nosotros y la tierra."</p>
+                </div>
+                <a href="sobre.html" class="btn-primary">Conoce Nuestra Historia</a>
+            </div>
+            <div class="story-image"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CTA - TRANSICIÓN A BAREFOOT -->
+    <section class="transition-cta-section">
+        <div class="transition-cta-container">
+            <h2>¿Listo para cambiar?</h2>
+            <p>La transición a barefoot es más fácil de lo que piensas. Te guiaremos en cada paso del camino.</p>
+            <div class="transition-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h3>Aprende</h3>
+                    <p>Lee nuestras guías y entiende la biomecánica</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h3>Visita</h3>
+                    <p>Ven a probarte calzado en nuestra tienda</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <h3>Transiciona</h3>
+                    <p>Sigue nuestro plan de 12 semanas</p>
+                </div>
+            </div>
+            <a href="blog/transicion-barefoot.html" class="btn-primary">Guía de Transición</a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: FAQ -->
     <section class="faq-section">
         <div class="faq-section-header">
             <span>Resolvemos tus dudas</span>
