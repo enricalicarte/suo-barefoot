@@ -69,8 +69,8 @@ function renderHeader() {
         <div class="header-container">
             <a href="${root}index.html" class="logo">S Û O</a>
             <nav class="nav-desktop">
-                <a href="${root}catalogo/index.html">Catálogo</a>
-                <a href="${root}marcas/index.html">Marcas</a>
+                <!-- <a href="${root}catalogo/index.html">Catálogo</a> -->
+                <!-- <a href="${root}marcas/index.html">Marcas</a> -->
                 <a href="${root}blog/index.html">Diario Podal</a>
                 <a href="${root}tienda.html">Barcelona Store</a>
                 <a href="${root}sobre.html">Sobre SÛO</a>
@@ -81,8 +81,8 @@ function renderHeader() {
         </div>
     </header>
     <nav class="nav-mobile">
-        <a href="${root}catalogo/index.html">Catálogo</a>
-        <a href="${root}marcas/index.html">Marcas</a>
+        <!-- <a href="${root}catalogo/index.html">Catálogo</a> -->
+        <!-- <a href="${root}marcas/index.html">Marcas</a> -->
         <a href="${root}blog/index.html">Diario Podal</a>
         <a href="${root}tienda.html">Barcelona Store</a>
         <a href="${root}sobre.html">Sobre SÛO</a>
@@ -106,8 +106,8 @@ function renderFooter() {
             <div class="footer-links">
                 <h4>Boutique</h4>
                 <ul>
-                    <li><a href="${root}catalogo/index.html">Catálogo</a></li>
-                    <li><a href="${root}marcas/index.html">Marcas</a></li>
+                    <!-- <li><a href="${root}catalogo/index.html">Catálogo</a></li> -->
+                    <!-- <li><a href="${root}marcas/index.html">Marcas</a></li> -->
                     <li><a href="${root}blog/index.html">Diario Podal</a></li>
                     <li><a href="${root}sobre.html">Sobre SÛO</a></li>
                     <li><a href="${root}tienda.html">Barcelona Store</a></li>
