@@ -11,7 +11,12 @@
       "season": "SS26",
       "sizes": "[36, 37, 38, 39, 40, 41, 42]",
       "description": "",
-      "image": ""
+      "image": "",
+      "stock": {
+        "36": 1,
+        "37": 1,
+        "38": 1
+      }
     },
     {
       "slug": "andanines-dijon-261580-3",
