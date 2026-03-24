@@ -23,13 +23,17 @@
       "name": "DIJON",
       "brand": "Andanines",
       "sku": "261580-3",
-      "category": "",
+      "category": "Mujer",
       "subfamily": "Deportivo",
       "season": "SS26",
       "sizes": "[36, 37, 38, 39, 40, 41, 42]",
-      "price": "87â¬",
+      "price": "55",
       "description": "",
-      "image": ""
+      "image": "",
+      "stock": {
+        "37": 1,
+        "38": 2
+      }
     },
     {
       "slug": "andanines-serraje-gris-252673-8",
