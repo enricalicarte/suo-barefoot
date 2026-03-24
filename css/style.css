@@ -2,7 +2,7 @@
    SÛO BARCELONA - STYLE.CSS
    Versión limpia y completa
 ======================================== */
- 
+
 :root {
     --olive: #6B7A3D;
     --olive-dark: #5A6832;
@@ -15,7 +15,7 @@
     --text: #333;
     --white: #FFFFFF;
 }
- 
+
 /* ========================================
    RESET & BASE
 ======================================== */
@@ -30,7 +30,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
- 
+
 /* ========================================
    HEADER
 ======================================== */
@@ -71,7 +71,7 @@ a { color: inherit; }
     transition: color 0.3s;
 }
 .nav-desktop a:hover { color: var(--olive); }
- 
+
 .menu-toggle {
     display: none;
     background: none;
@@ -90,7 +90,7 @@ a { color: inherit; }
 .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
- 
+
 .nav-mobile {
     display: none;
     position: fixed;
@@ -109,9 +109,9 @@ a { color: inherit; }
     padding: 1rem 0;
     border-bottom: 1px solid var(--gray-border);
 }
- 
+
 main { padding-top: 70px; min-height: 80vh; }
- 
+
 /* ========================================
    BUTTONS
 ======================================== */
@@ -130,7 +130,7 @@ main { padding-top: 70px; min-height: 80vh; }
     cursor: pointer;
 }
 .btn-primary:hover { background: var(--olive-dark); }
- 
+
 .btn-outline {
     display: inline-block;
     padding: 0.9rem 1.8rem;
@@ -146,7 +146,7 @@ main { padding-top: 70px; min-height: 80vh; }
     cursor: pointer;
 }
 .btn-outline:hover { background: var(--olive); color: var(--white); }
- 
+
 .btn-light {
     display: inline-block;
     padding: 0.9rem 1.8rem;
@@ -161,7 +161,7 @@ main { padding-top: 70px; min-height: 80vh; }
     transition: all 0.3s;
 }
 .btn-light:hover { background: var(--cream); color: var(--olive); }
- 
+
 /* ========================================
    BREADCRUMB
 ======================================== */
@@ -175,7 +175,7 @@ main { padding-top: 70px; min-height: 80vh; }
     text-decoration: none;
 }
 .breadcrumb a:hover { text-decoration: underline; }
- 
+
 /* ========================================
    PAGE HERO
 ======================================== */
@@ -197,7 +197,7 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     max-width: 500px;
 }
- 
+
 /* ========================================
    HOME - HERO
 ======================================== */
@@ -228,7 +228,7 @@ main { padding-top: 70px; min-height: 80vh; }
     line-height: 1.7;
 }
 .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
- 
+
 /* ========================================
    HOME - TIENDA CARD
 ======================================== */
@@ -237,7 +237,7 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1400px;
     margin: 0 auto;
 }
- 
+
 /* ========================================
    HOME - SELECCIÓN SECTION
 ======================================== */
@@ -314,7 +314,7 @@ main { padding-top: 70px; min-height: 80vh; }
     font-size: 1.2rem;
     color: var(--olive-muted);
 }
- 
+
 /* ========================================
    HOME - BLOG PREVIEW SECTION
 ======================================== */
@@ -403,7 +403,7 @@ main { padding-top: 70px; min-height: 80vh; }
 .blog-preview-cta {
     text-align: center;
 }
- 
+
 /* ========================================
    HOME - FEATURES SECTION
 ======================================== */
@@ -459,7 +459,7 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     line-height: 1.7;
 }
- 
+
 /* ========================================
    HOME - FEATURED BRANDS SECTION
 ======================================== */
@@ -537,7 +537,7 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     font-weight: 500;
 }
- 
+
 /* ========================================
    HOME - STORY SECTION
 ======================================== */
@@ -593,7 +593,7 @@ main { padding-top: 70px; min-height: 80vh; }
     background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
     border-radius: 2px;
 }
- 
+
 /* ========================================
    HOME - TRANSITION CTA SECTION
 ======================================== */
@@ -657,7 +657,7 @@ main { padding-top: 70px; min-height: 80vh; }
     display: block;
     margin: 0 auto;
 }
- 
+
 /* ========================================
    HOME - FILOSOFÍA
 ======================================== */
@@ -703,7 +703,7 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 550px;
 }
 .filosofia-cta { margin-top: 2rem; }
- 
+
 /* ========================================
    HOME - VALORES
 ======================================== */
@@ -735,7 +735,7 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     line-height: 1.7;
 }
- 
+
 /* ========================================
    BLOG INDEX - GRID
 ======================================== */
@@ -799,7 +799,7 @@ main { padding-top: 70px; min-height: 80vh; }
     text-decoration: none;
 }
 .read-more:hover { text-decoration: underline; }
- 
+
 /* ========================================
    BLOG POST ARTICLE
 ======================================== */
@@ -896,7 +896,7 @@ main { padding-top: 70px; min-height: 80vh; }
 .back-link:hover {
     text-decoration: underline;
 }
- 
+
 /* ========================================
    ARTICLE PAGE (Alternative naming)
 ======================================== */
@@ -1007,7 +1007,7 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--olive);
     margin-bottom: 1.5rem;
 }
- 
+
 /* ========================================
    FAQ SECTION
 ======================================== */
@@ -1074,7 +1074,7 @@ details[open] .faq-icon { transform: rotate(180deg); }
     line-height: 1.7;
     margin: 0;
 }
- 
+
 /* ========================================
    FOOTER
 ======================================== */
@@ -1141,11 +1141,323 @@ details[open] .faq-icon { transform: rotate(180deg); }
     font-size: 0.75rem;
     opacity: 0.5;
 }
- 
+
+/* ========================================
+   ABOUT PAGE (SOBRE SÛO)
+======================================== */
+.about-page {
+    padding: 0 2rem 5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.about-story-content {
+    padding-right: 1rem;
+}
+.about-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 1rem;
+}
+.about-story h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+.about-story-content p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+}
+.about-story-image {
+    height: 400px;
+    background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+    border-radius: 2px;
+}
+.about-name {
+    background: var(--gray-light);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    border-radius: 2px;
+}
+.about-name-box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.about-name-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--olive);
+    display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2em;
+}
+.about-name-box p {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+}
+.about-name-box em {
+    color: var(--olive);
+    font-style: italic;
+}
+.about-section {
+    margin-bottom: 3rem;
+}
+.about-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.5rem;
+}
+.about-section p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.85;
+    margin-bottom: 1.25rem;
+}
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.about-value {
+    text-align: center;
+    padding: 2rem;
+    background: var(--gray-light);
+    border-radius: 2px;
+}
+.about-value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.about-value h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+.about-value p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ========================================
+   TIENDA PAGE (STORE)
+======================================== */
+.tienda-galeria {
+    padding: 3rem 2rem;
+    background: var(--gray-light);
+    margin-bottom: 4rem;
+}
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.galeria-item {
+    height: 300px;
+    background: var(--olive-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.galeria-item.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 3rem;
+}
+.galeria-grande {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: auto;
+}
+.galeria-vertical {
+    grid-row: span 2;
+}
+.galeria-horizontal {
+    grid-column: span 2;
+}
+.galeria-cuadrada {
+    grid-column: span 1;
+}
+
+.tienda-info {
+    padding: 0 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.tienda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+.tienda-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+.tienda-content p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.85;
+    margin-bottom: 2rem;
+}
+.tienda-datos {
+    background: var(--gray-light);
+    padding: 2rem;
+    border-radius: 2px;
+    margin-bottom: 2rem;
+}
+.dato {
+    margin-bottom: 1.5rem;
+}
+.dato:last-child {
+    margin-bottom: 0;
+}
+.dato h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.5rem;
+}
+.dato p {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+.dato a {
+    color: var(--olive);
+    text-decoration: none;
+    font-weight: 500;
+}
+.dato a:hover {
+    text-decoration: underline;
+}
+.tienda-mapa {
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.tienda-mapa iframe {
+    border-radius: 2px;
+}
+
+.servicios-section {
+    padding: 5rem 2rem;
+    background: var(--gray-light);
+    margin-bottom: 4rem;
+}
+.servicios-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.servicio {
+    background: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--gray-border);
+    border-radius: 2px;
+}
+.servicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+.servicio p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* ========================================
    RESPONSIVE
 ======================================== */
 @media (max-width: 1000px) {
+    .about-story {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .about-story-image {
+        height: 300px;
+    }
+    .about-values {
+        grid-template-columns: 1fr;
+    }
+    .tienda-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .galeria-grande {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .galeria-vertical {
+        grid-row: span 1;
+    }
+    .galeria-horizontal {
+        grid-column: span 1;
+    }
+}
     .blog-preview-grid { grid-template-columns: 1fr; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .featured-brands-grid { grid-template-columns: repeat(4, 1fr); }
@@ -1155,7 +1467,7 @@ details[open] .faq-icon { transform: rotate(180deg); }
     .footer-container { grid-template-columns: 1fr 1fr; }
     .blog-grid { grid-template-columns: 1fr; }
 }
- 
+
 @media (max-width: 768px) {
     .header-container { padding: 0.9rem 1.5rem; }
     .nav-desktop { display: none; }
@@ -1195,11 +1507,25 @@ details[open] .faq-icon { transform: rotate(180deg); }
     .blog-grid { padding: 0 1.5rem 5rem; }
     .article-page { padding: 0 1.5rem 4rem; }
     
+    .about-page { padding: 0 1.5rem 5rem; }
+    .about-story-content { padding-right: 0; }
+    .about-name { padding: 3rem 1.5rem; }
+    .about-name-word { font-size: 2.5rem; }
+    .about-values { grid-template-columns: 1fr; gap: 1rem; }
+    .about-value { padding: 1.5rem; }
+    
+    .tienda-info { padding: 0 1.5rem 5rem; }
+    .tienda-galeria { padding: 2rem 1.5rem; }
+    .galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .galeria-item { height: 200px; }
+    .servicios-section { padding: 3rem 1.5rem; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    
     .footer { padding: 3rem 1.5rem 1.5rem; }
     .footer-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
     .footer-brand p { max-width: none; }
 }
- 
+
 @media (max-width: 480px) {
     .featured-brands-grid { grid-template-columns: 1fr; }
     .step-number { width: 40px; height: 40px; font-size: 1.2rem; }
@@ -1207,5 +1533,10 @@ details[open] .faq-icon { transform: rotate(180deg); }
     .features-grid { grid-template-columns: 1fr; }
     .transition-steps { grid-template-columns: 1fr; }
     .blog-grid { grid-template-columns: 1fr; }
+    .about-story { gap: 1rem; }
+    .about-story-image { height: 250px; }
+    .about-values { gap: 1rem; }
+    .galeria-grid { grid-template-columns: 1fr; }
+    .galeria-item { height: 250px; }
+    .tienda-datos { padding: 1.5rem; }
 }
- 
