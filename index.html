@@ -29,30 +29,20 @@
     <style>
         .hero { position: relative; min-height: calc(100vh - 70px); display: flex; flex-direction: column; justify-content: center; padding: 4rem 2rem; max-width: 1400px; margin: 0 auto; }
         .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 45%; height: 100%; background: url('https://images.unsplash.com/photo-1603080873519-cf21dd9cf006?w=800&q=80') center/cover; opacity: 0.2; z-index: -1; background-position: center right; }
-        .featured-image { height: 320px; background-size: cover; background-position: center; margin-bottom: 1rem; position: relative; }
-        .featured-card:nth-child(1) .featured-image { background: linear-gradient(165deg, #e8e5e0 0%, #d4d0c8 100%); }
-        .featured-card:nth-child(2) .featured-image { background: linear-gradient(165deg, #f0ede8 0%, #e5e0d8 100%); }
-        .featured-card:nth-child(3) .featured-image { background: linear-gradient(165deg, #ece8e3 0%, #ddd8d0 100%); }
-        .featured-card:nth-child(4) .featured-image { background: linear-gradient(165deg, #f5f2ed 0%, #e8e4dc 100%); }
-        .category-image { height: 200px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
-        .category-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(107,122,61,0.7), rgba(107,122,61,0.3)); }
-        .category-image .cat-icon { position: relative; z-index: 1; font-size: 3rem; opacity: 0.9; }
-        .category-card:first-child .category-image { background-image: url('https://images.unsplash.com/photo-1596395366619-1d95cb3a4f3f?w=600&q=80'); background-position: center; }
-        .category-card:last-child .category-image { background-image: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80'); }
-        .filosofia-section { background: linear-gradient(rgba(107,122,61,0.92), rgba(107,122,61,0.95)), url('https://images.unsplash.com/photo-1528148343865-15618c4fb4e7?w=1200&q=80') center/cover; background-position: center; }
         .tienda-card { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--gray-border); align-items: center; }
-        .tienda-image { height: 280px; background: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80') center/cover; border-radius: 2px; background-position: center; }
+        .tienda-image { height: 280px; background: url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80') center/cover; border-radius: 2px; }
         .tienda-text { padding: 1rem 0; }
         .tienda-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; font-style: italic; color: var(--olive); margin-bottom: 0.75rem; }
         .tienda-text p { font-size: 0.9rem; color: var(--gray-text); line-height: 1.7; margin-bottom: 1rem; }
-        .story-image { height: 400px; background: url('https://images.unsplash.com/photo-1596395366619-1d95cb3a4f3f?w=600&q=80') center/cover; border-radius: 2px; background-position: center; }
+        .story-image { height: 400px; background: url('https://images.unsplash.com/photo-1596395366619-1d95cb3a4f3f?w=600&q=80') center/cover; border-radius: 2px; }
         @media (max-width: 768px) { .hero::before { width: 100%; opacity: 0.1; } .tienda-card { grid-template-columns: 1fr; } .tienda-image { height: 200px; } .story-image { height: 300px; } }
     </style>
-
+ 
 </head>
 <body>
     <main>
-
+ 
+    <!-- HERO SECTION -->
     <section class="hero">
         <h1>Vuelve a sentir el suelo.</h1>
         <p>Una selección curada de marcas barefoot para mujeres conscientes y pies en crecimiento.</p>
@@ -61,18 +51,8 @@
             <a href="blog/index.html" class="btn-outline">Aprende sobre Barefoot</a>
         </div>
     </section>
-
-    <!-- SECCIÓN DE CATÁLOGO OCULTA TEMPORALMENTE -->
-    <!-- <section class="featured-section">
-        <div class="featured-header">
-            <span class="featured-tag">Primavera · Verano 2026</span>
-            <h2>Lo más buscado</h2>
-        </div>
-        <div class="featured-grid">
-            [productos aquí]
-        </div>
-    </section> -->
-
+ 
+    <!-- TIENDA CARD SECTION -->
     <section class="tienda-card-section">
         <div class="tienda-card">
             <div class="tienda-image"></div>
@@ -86,7 +66,8 @@
             </div>
         </div>
     </section>
-
+ 
+    <!-- SELECTION SECTION -->
     <section class="seleccion-section">
         <div class="seleccion-header">
             <span>Para la Familia</span>
@@ -109,26 +90,8 @@
             </a>
         </div>
     </section>
-
-    <section class="filosofia-section">
-        <div class="filosofia-container">
-            <span class="filosofia-label">Cultura del Movimiento</span>
-            <h2>Salud desde la base.</h2>
-            <p class="filosofia-quote">"El pie humano es una obra de arte de la ingeniería y una obra maestra de la arquitectura." — Leonardo da Vinci</p>
-            <p class="filosofia-text">En SÛO educamos sobre la biomecánica natural. Entiende por qué el calzado moderno deforma tus pies y cómo recuperarlos con nuestra guía de transición.</p>
-            <div class="filosofia-cta"><a href="blog/index.html" class="btn-light">Leer en el Blog</a></div>
-        </div>
-    </section>
-
-    <section class="valores-section">
-        <div class="valores-grid">
-            <div class="valor-item"><h3>Curaduría Ética</h3><p>Solo marcas que respetan la anatomía y los procesos de fabricación sostenibles.</p></div>
-            <div class="valor-item"><h3>Trato Humano</h3><p>En nuestra tienda física te escuchamos y analizamos tu pisada de forma personalizada.</p></div>
-            <div class="valor-item"><h3>Consciencia</h3><p>No vendemos moda, vendemos una herramienta para mejorar tu salud a largo plazo.</p></div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: ÚLTIMOS ARTÍCULOS DEL BLOG -->
+ 
+    <!-- BLOG PREVIEW SECTION -->
     <section class="blog-preview-section">
         <div class="blog-preview-header">
             <h2>Diario Podal</h2>
@@ -158,8 +121,8 @@
             <a href="blog/index.html" class="btn-outline">Ver todos los artículos →</a>
         </div>
     </section>
-
-    <!-- SECCIÓN: CARACTERÍSTICAS BAREFOOT -->
+ 
+    <!-- FEATURES SECTION -->
     <section class="features-section">
         <div class="features-header">
             <h2>¿Por qué barefoot?</h2>
@@ -197,8 +160,8 @@
             </div>
         </div>
     </section>
-
-    <!-- SECCIÓN: MARCAS DESTACADAS -->
+ 
+    <!-- FEATURED BRANDS SECTION -->
     <section class="featured-brands-section">
         <div class="featured-brands-header">
             <span>Nuestras Marcas</span>
@@ -247,12 +210,9 @@
                 <span class="brand-origin">España</span>
             </div>
         </div>
-        <!-- <div class="featured-brands-cta">
-            <a href="marcas/index.html" class="btn-outline">Descubre todas nuestras marcas →</a>
-        </div> -->
     </section>
-
-    <!-- SECCIÓN: TESTIMONIO / HISTORIA -->
+ 
+    <!-- STORY SECTION -->
     <section class="story-section">
         <div class="story-container">
             <div class="story-content">
@@ -268,8 +228,8 @@
             <div class="story-image"></div>
         </div>
     </section>
-
-    <!-- SECCIÓN: CTA - TRANSICIÓN A BAREFOOT -->
+ 
+    <!-- TRANSITION CTA SECTION -->
     <section class="transition-cta-section">
         <div class="transition-cta-container">
             <h2>¿Listo para cambiar?</h2>
@@ -294,8 +254,28 @@
             <a href="blog/transicion-barefoot.html" class="btn-primary">Guía de Transición</a>
         </div>
     </section>
-
-    <!-- SECCIÓN: FAQ -->
+ 
+    <!-- PHILOSOPHY SECTION -->
+    <section class="filosofia-section">
+        <div class="filosofia-container">
+            <span class="filosofia-label">Cultura del Movimiento</span>
+            <h2>Salud desde la base.</h2>
+            <p class="filosofia-quote">"El pie humano es una obra de arte de la ingeniería y una obra maestra de la arquitectura." — Leonardo da Vinci</p>
+            <p class="filosofia-text">En SÛO educamos sobre la biomecánica natural. Entiende por qué el calzado moderno deforma tus pies y cómo recuperarlos con nuestra guía de transición.</p>
+            <div class="filosofia-cta"><a href="blog/index.html" class="btn-light">Leer en el Blog</a></div>
+        </div>
+    </section>
+ 
+    <!-- VALUES SECTION -->
+    <section class="valores-section">
+        <div class="valores-grid">
+            <div class="valor-item"><h3>Curaduría Ética</h3><p>Solo marcas que respetan la anatomía y los procesos de fabricación sostenibles.</p></div>
+            <div class="valor-item"><h3>Trato Humano</h3><p>En nuestra tienda física te escuchamos y analizamos tu pisada de forma personalizada.</p></div>
+            <div class="valor-item"><h3>Consciencia</h3><p>No vendemos moda, vendemos una herramienta para mejorar tu salud a largo plazo.</p></div>
+        </div>
+    </section>
+ 
+    <!-- FAQ SECTION -->
     <section class="faq-section">
         <div class="faq-section-header">
             <span>Resolvemos tus dudas</span>
@@ -303,8 +283,9 @@
         </div>
         <div id="faq-tienda"></div>
     </section>
-
+ 
     </main>
     <script src="js/site.js"></script>
 </body>
 </html>
+ 
