@@ -11,7 +11,10 @@
       "sizes": "[36, 37, 38, 39, 40, 41, 42]",
       "subfamily": "Deportivo",
       "price": "87",
-      "description": ""
+      "description": "",
+      "stock": {
+        "36": 2
+      }
     },
     {
       "image": "",
@@ -3277,30 +3280,30 @@
       "image": ""
     },
     {
-      "slug": "victoria-mercedita-lona-frambuesa-1370109",
-      "name": "MERCEDITA LONA FRAMBUESA",
-      "brand": "Victoria",
-      "sku": "1370109",
-      "category": "Infantil",
-      "subfamily": "Lona",
       "season": "SS26",
+      "sku": "1370109",
+      "slug": "victoria-mercedita-lona-frambuesa-1370109",
+      "category": "Infantil",
+      "image": "",
+      "brand": "Victoria",
+      "name": "MERCEDITA LONA FRAMBUESA",
       "sizes": "[22, 23, 24, 25, 26, 27, 28, 29, 30]",
+      "subfamily": "Lona",
       "price": "39",
-      "description": "",
-      "image": ""
+      "description": ""
     },
     {
-      "slug": "victoria-mercedita-lona-manzana-1370109",
-      "name": "MERCEDITA LONA MANZANA",
-      "brand": "Victoria",
       "sku": "1370109",
-      "category": "Infantil",
-      "subfamily": "Lona",
       "season": "SS26",
+      "category": "Infantil",
+      "slug": "victoria-mercedita-lona-manzana-1370109",
+      "image": "",
+      "brand": "Victoria",
+      "name": "MERCEDITA LONA MANZANA",
       "sizes": "[22, 23, 24, 25, 26, 27, 28, 29, 30]",
       "price": "39",
-      "description": "",
-      "image": ""
+      "subfamily": "Lona",
+      "description": ""
     }
   ],
   "posts": [
