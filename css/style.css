@@ -1,6 +1,6 @@
 /* ========================================
-   SÛO BARCELONA - STYLE.CSS
-   Versión limpia y completa
+   SÛO BARCELONA - STYLE.CSS v2.0
+   Responsive Completo + Menú Móvil Funcional
 ======================================== */
 
 :root {
@@ -19,8 +19,16 @@
 /* ========================================
    RESET & BASE
 ======================================== */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+*, *::before, *::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--white);
@@ -28,19 +36,30 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; }
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+a { 
+    color: inherit; 
+}
 
 /* ========================================
-   HEADER
+   HEADER & NAVIGATION
 ======================================== */
 .header {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     background: var(--white);
     border-bottom: 1px solid var(--gray-border);
 }
+
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -49,20 +68,27 @@ a { color: inherit; }
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--olive);
     text-decoration: none;
     letter-spacing: 0.2em;
+    flex-shrink: 0;
 }
+
+/* Desktop Navigation */
 .nav-desktop {
     display: flex;
     gap: 2.5rem;
+    margin: 0;
+    list-style: none;
 }
+
 .nav-desktop a {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--gray-text);
     text-decoration: none;
@@ -70,47 +96,88 @@ a { color: inherit; }
     text-transform: uppercase;
     transition: color 0.3s;
 }
-.nav-desktop a:hover { color: var(--olive); }
 
+.nav-desktop a:hover { 
+    color: var(--olive); 
+}
+
+/* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 1001;
+    flex-shrink: 0;
 }
+
 .menu-toggle span {
     display: block;
     width: 24px;
     height: 2px;
     background: var(--olive);
     margin: 5px 0;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
-.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-.menu-toggle.active span:nth-child(2) { opacity: 0; }
-.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+.menu-toggle.active span:nth-child(1) { 
+    transform: rotate(45deg) translate(8px, 8px); 
+}
+
+.menu-toggle.active span:nth-child(2) { 
+    opacity: 0; 
+}
+
+.menu-toggle.active span:nth-child(3) { 
+    transform: rotate(-45deg) translate(7px, -7px); 
+}
+
+/* Mobile Navigation */
 .nav-mobile {
     display: none;
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--white);
     z-index: 999;
-    padding: 6rem 2rem;
+    padding: 2rem;
     flex-direction: column;
-}
-.nav-mobile.active { display: flex; }
-.nav-mobile a {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--olive);
-    text-decoration: none;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--gray-border);
+    gap: 0;
+    overflow-y: auto;
 }
 
-main { padding-top: 70px; min-height: 80vh; }
+.nav-mobile.active { 
+    display: flex; 
+}
+
+.nav-mobile a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--olive);
+    text-decoration: none;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--gray-border);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+}
+
+.nav-mobile a:hover {
+    color: var(--olive-dark);
+}
+
+.nav-mobile a:last-child {
+    border-bottom: none;
+}
+
+main { 
+    padding-top: 70px; 
+    min-height: 80vh; 
+}
 
 /* ========================================
    BUTTONS
@@ -128,8 +195,12 @@ main { padding-top: 70px; min-height: 80vh; }
     transition: background 0.3s;
     border: none;
     cursor: pointer;
+    border-radius: 2px;
 }
-.btn-primary:hover { background: var(--olive-dark); }
+
+.btn-primary:hover { 
+    background: var(--olive-dark); 
+}
 
 .btn-outline {
     display: inline-block;
@@ -144,8 +215,13 @@ main { padding-top: 70px; min-height: 80vh; }
     border: 1px solid var(--olive);
     transition: all 0.3s;
     cursor: pointer;
+    border-radius: 2px;
 }
-.btn-outline:hover { background: var(--olive); color: var(--white); }
+
+.btn-outline:hover { 
+    background: var(--olive); 
+    color: var(--white); 
+}
 
 .btn-light {
     display: inline-block;
@@ -159,8 +235,13 @@ main { padding-top: 70px; min-height: 80vh; }
     text-transform: uppercase;
     border: 1px solid rgba(255,255,255,0.5);
     transition: all 0.3s;
+    border-radius: 2px;
 }
-.btn-light:hover { background: var(--cream); color: var(--olive); }
+
+.btn-light:hover { 
+    background: var(--cream); 
+    color: var(--olive); 
+}
 
 /* ========================================
    BREADCRUMB
@@ -170,11 +251,15 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     padding: 1.5rem 0;
 }
+
 .breadcrumb a {
     color: var(--olive);
     text-decoration: none;
 }
-.breadcrumb a:hover { text-decoration: underline; }
+
+.breadcrumb a:hover { 
+    text-decoration: underline; 
+}
 
 /* ========================================
    PAGE HERO
@@ -184,14 +269,16 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .page-hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 0.5rem;
 }
+
 .page-hero p {
     font-size: 1rem;
     color: var(--gray-text);
@@ -210,9 +297,10 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1400px;
     margin: 0 auto;
 }
+
 .hero h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
@@ -220,6 +308,7 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-bottom: 1.5rem;
     max-width: 600px;
 }
+
 .hero p {
     font-size: 1rem;
     color: var(--gray-text);
@@ -227,10 +316,15 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-bottom: 2rem;
     line-height: 1.7;
 }
-.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-buttons { 
+    display: flex; 
+    gap: 1rem; 
+    flex-wrap: wrap; 
+}
 
 /* ========================================
-   HOME - TIENDA CARD
+   TIENDA CARD SECTION
 ======================================== */
 .tienda-card-section {
     padding: 0 2rem 4rem;
@@ -238,18 +332,51 @@ main { padding-top: 70px; min-height: 80vh; }
     margin: 0 auto;
 }
 
+.tienda-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--gray-border);
+    align-items: center;
+}
+
+.tienda-image {
+    height: 280px;
+    background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+    border-radius: 2px;
+}
+
+.tienda-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+
+.tienda-text p {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
 /* ========================================
-   HOME - SELECCIÓN SECTION
+   SELECCIÓN SECTION
 ======================================== */
 .seleccion-section {
     padding: 5rem 2rem;
     background: var(--gray-light);
 }
+
 .seleccion-header {
     text-align: center;
     max-width: 1400px;
     margin: 0 auto 3rem;
 }
+
 .seleccion-header span {
     font-size: 0.65rem;
     font-weight: 500;
@@ -259,13 +386,15 @@ main { padding-top: 70px; min-height: 80vh; }
     display: block;
     margin-bottom: 0.75rem;
 }
+
 .seleccion-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
 }
+
 .seleccion-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -273,15 +402,18 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1000px;
     margin: 0 auto;
 }
+
 .category-card {
     background: var(--white);
     text-decoration: none;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .category-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
+
 .category-image {
     height: 200px;
     background: linear-gradient(135deg, var(--olive-light), var(--olive));
@@ -289,20 +421,27 @@ main { padding-top: 70px; min-height: 80vh; }
     align-items: center;
     justify-content: center;
 }
-.category-image .cat-icon { font-size: 3.5rem; opacity: 0.3; }
+
+.category-image .cat-icon { 
+    font-size: 3rem; 
+    opacity: 0.3; 
+}
+
 .category-info {
     padding: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .category-info h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--olive);
     margin-bottom: 0.2rem;
 }
+
 .category-info span {
     font-size: 0.6rem;
     font-weight: 500;
@@ -310,41 +449,47 @@ main { padding-top: 70px; min-height: 80vh; }
     text-transform: uppercase;
     color: var(--olive-muted);
 }
+
 .category-info .arrow {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--olive-muted);
 }
 
 /* ========================================
-   HOME - BLOG PREVIEW SECTION
+   BLOG PREVIEW SECTION
 ======================================== */
 .blog-preview-section {
     padding: 5rem 2rem;
     max-width: 1400px;
     margin: 0 auto;
 }
+
 .blog-preview-header {
     text-align: center;
     margin-bottom: 3rem;
 }
+
 .blog-preview-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 0.5rem;
 }
+
 .blog-preview-header p {
     font-size: 0.95rem;
     color: var(--gray-text);
 }
+
 .blog-preview-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 2.5rem;
 }
+
 .blog-preview-card {
     background: var(--white);
     border: 1px solid var(--gray-border);
@@ -353,11 +498,13 @@ main { padding-top: 70px; min-height: 80vh; }
     flex-direction: column;
     transition: all 0.3s;
 }
+
 .blog-preview-card:hover {
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     transform: translateY(-4px);
     border-color: var(--olive);
 }
+
 .blog-preview-tag {
     display: inline-block;
     font-size: 0.6rem;
@@ -368,21 +515,25 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-bottom: 0.75rem;
     align-self: flex-start;
 }
+
 .blog-preview-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--olive);
     margin-bottom: 0.75rem;
     line-height: 1.3;
 }
+
 .blog-preview-card h3 a {
     text-decoration: none;
     color: var(--olive);
 }
+
 .blog-preview-card h3 a:hover {
     text-decoration: underline;
 }
+
 .blog-preview-card p {
     font-size: 0.9rem;
     color: var(--gray-text);
@@ -390,6 +541,7 @@ main { padding-top: 70px; min-height: 80vh; }
     flex-grow: 1;
     margin-bottom: 1rem;
 }
+
 .blog-preview-link {
     font-size: 0.8rem;
     font-weight: 500;
@@ -397,20 +549,23 @@ main { padding-top: 70px; min-height: 80vh; }
     text-decoration: none;
     align-self: flex-start;
 }
+
 .blog-preview-link:hover {
     text-decoration: underline;
 }
+
 .blog-preview-cta {
     text-align: center;
 }
 
 /* ========================================
-   HOME - FEATURES SECTION
+   FEATURES SECTION
 ======================================== */
 .features-section {
     padding: 5rem 2rem;
     background: var(--gray-light);
 }
+
 .features-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -418,13 +573,15 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-left: auto;
     margin-right: auto;
 }
+
 .features-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
 }
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -432,6 +589,7 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .feature-card {
     background: var(--white);
     padding: 2rem;
@@ -439,21 +597,25 @@ main { padding-top: 70px; min-height: 80vh; }
     border: 1px solid var(--gray-border);
     transition: all 0.3s;
 }
+
 .feature-card:hover {
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     transform: translateY(-4px);
 }
+
 .feature-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
+
 .feature-card h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--olive);
     margin-bottom: 0.75rem;
 }
+
 .feature-card p {
     font-size: 0.85rem;
     color: var(--gray-text);
@@ -461,15 +623,17 @@ main { padding-top: 70px; min-height: 80vh; }
 }
 
 /* ========================================
-   HOME - FEATURED BRANDS SECTION
+   FEATURED BRANDS SECTION
 ======================================== */
 .featured-brands-section {
     padding: 5rem 2rem;
 }
+
 .featured-brands-header {
     text-align: center;
     margin-bottom: 3rem;
 }
+
 .featured-brands-header span {
     display: block;
     font-size: 0.65rem;
@@ -479,25 +643,29 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     margin-bottom: 0.75rem;
 }
+
 .featured-brands-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 0.5rem;
 }
+
 .featured-brands-header p {
     font-size: 0.95rem;
     color: var(--gray-text);
 }
+
 .featured-brands-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto 2.5rem;
 }
+
 .featured-brand-item {
     text-align: center;
     padding: 1.5rem 1rem;
@@ -505,11 +673,13 @@ main { padding-top: 70px; min-height: 80vh; }
     border: 1px solid var(--gray-border);
     transition: all 0.3s;
 }
+
 .featured-brand-item:hover {
     border-color: var(--olive);
     box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     transform: translateY(-2px);
 }
+
 .brand-circle {
     width: 50px;
     height: 50px;
@@ -520,17 +690,19 @@ main { padding-top: 70px; min-height: 80vh; }
     justify-content: center;
     margin: 0 auto 0.75rem;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
     color: var(--white);
 }
+
 .featured-brand-item h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 400;
     color: var(--olive);
     margin-bottom: 0.25rem;
 }
+
 .brand-origin {
     display: block;
     font-size: 0.65rem;
@@ -539,12 +711,13 @@ main { padding-top: 70px; min-height: 80vh; }
 }
 
 /* ========================================
-   HOME - STORY SECTION
+   STORY SECTION
 ======================================== */
 .story-section {
     padding: 5rem 2rem;
     background: var(--gray-light);
 }
+
 .story-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -553,41 +726,47 @@ main { padding-top: 70px; min-height: 80vh; }
     gap: 4rem;
     align-items: center;
 }
+
 .story-content h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
+
 .story-lead {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--olive);
     line-height: 1.7;
     margin-bottom: 1.25rem;
     font-weight: 500;
 }
+
 .story-content p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--gray-text);
-    line-height: 1.85;
-    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
 }
+
 .story-quote {
     background: var(--white);
-    padding: 1.75rem;
+    padding: 1.5rem;
     border-left: 3px solid var(--olive);
-    margin: 2rem 0;
+    margin: 1.5rem 0;
 }
+
 .story-quote p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     font-style: italic;
     color: var(--olive);
     margin: 0;
 }
+
 .story-image {
     height: 400px;
     background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
@@ -595,25 +774,28 @@ main { padding-top: 70px; min-height: 80vh; }
 }
 
 /* ========================================
-   HOME - TRANSITION CTA SECTION
+   TRANSITION CTA SECTION
 ======================================== */
 .transition-cta-section {
     background: var(--olive);
     color: var(--white);
     padding: 5rem 2rem;
 }
+
 .transition-cta-container {
     max-width: 900px;
     margin: 0 auto;
 }
+
 .transition-cta-container h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
     font-weight: 300;
     font-style: italic;
     text-align: center;
     margin-bottom: 0.75rem;
 }
+
 .transition-cta-container > p {
     text-align: center;
     font-size: 1rem;
@@ -621,15 +803,18 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-bottom: 3rem;
     line-height: 1.6;
 }
+
 .transition-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 2.5rem;
 }
+
 .step {
     text-align: center;
 }
+
 .step-number {
     display: inline-flex;
     width: 50px;
@@ -643,33 +828,38 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-bottom: 1rem;
     border: 2px solid rgba(255,255,255,0.3);
 }
+
 .step h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
 }
+
 .step p {
     font-size: 0.9rem;
     opacity: 0.85;
 }
+
 .transition-cta-container .btn-primary {
     display: block;
     margin: 0 auto;
 }
 
 /* ========================================
-   HOME - FILOSOFÍA
+   FILOSOFÍA SECTION
 ======================================== */
 .filosofia-section {
     background: var(--olive);
     color: var(--cream);
     padding: 5rem 2rem;
 }
+
 .filosofia-container {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .filosofia-label {
     display: inline-block;
     padding: 0.6rem 1.2rem;
@@ -681,36 +871,43 @@ main { padding-top: 70px; min-height: 80vh; }
     text-transform: uppercase;
     margin-bottom: 2rem;
 }
+
 .filosofia-section h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     font-weight: 300;
     font-style: italic;
     margin-bottom: 1.5rem;
 }
+
 .filosofia-quote {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-style: italic;
     line-height: 1.6;
     opacity: 0.9;
     margin-bottom: 1.5rem;
 }
+
 .filosofia-text {
     font-size: 0.95rem;
     line-height: 1.7;
     opacity: 0.85;
     max-width: 550px;
 }
-.filosofia-cta { margin-top: 2rem; }
+
+.filosofia-cta { 
+    margin-top: 2rem; 
+}
 
 /* ========================================
-   HOME - VALORES
+   VALORES SECTION
 ======================================== */
 .valores-section {
     padding: 5rem 2rem;
     background: var(--gray-light);
 }
+
 .valores-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -718,18 +915,21 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .valor-item {
     text-align: center;
     padding: 2rem;
 }
+
 .valor-item h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 400;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 0.75rem;
 }
+
 .valor-item p {
     font-size: 0.85rem;
     color: var(--gray-text);
@@ -747,23 +947,28 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 1000px;
     margin: 0 auto;
 }
+
 .blog-card {
     background: var(--white);
     border: 1px solid var(--gray-border);
     overflow: hidden;
     transition: box-shadow 0.3s, transform 0.3s;
 }
+
 .blog-card:hover {
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     transform: translateY(-4px);
 }
+
 .blog-card-image {
     height: 200px;
     background: linear-gradient(135deg, var(--olive) 0%, var(--olive-light) 100%);
 }
+
 .blog-card-content {
     padding: 1.5rem;
 }
+
 .blog-tag {
     display: inline-block;
     font-size: 0.6rem;
@@ -773,32 +978,42 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--olive);
     margin-bottom: 0.6rem;
 }
+
 .blog-card-content h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 400;
     font-style: italic;
     margin-bottom: 0.6rem;
     line-height: 1.3;
 }
+
 .blog-card-content h2 a {
     color: var(--olive);
     text-decoration: none;
 }
-.blog-card-content h2 a:hover { text-decoration: underline; }
+
+.blog-card-content h2 a:hover { 
+    text-decoration: underline; 
+}
+
 .blog-card-content p {
     font-size: 0.85rem;
     color: var(--gray-text);
     line-height: 1.65;
     margin-bottom: 1rem;
 }
+
 .read-more {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--olive);
     text-decoration: none;
 }
-.read-more:hover { text-decoration: underline; }
+
+.read-more:hover { 
+    text-decoration: underline; 
+}
 
 /* ========================================
    BLOG POST ARTICLE
@@ -808,111 +1023,119 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 750px;
     margin: 0 auto;
 }
+
 .blog-post .breadcrumb {
     padding: 1.5rem 0;
 }
+
 .post-header {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--gray-border);
 }
-.blog-tag {
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    background: var(--olive);
-    color: var(--white);
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
+
 .post-header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: 400;
     font-style: italic;
     color: var(--olive);
     line-height: 1.25;
     margin-bottom: 0.6rem;
 }
+
 .post-excerpt {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--olive);
     line-height: 1.7;
     margin-bottom: 1rem;
 }
+
 .post-meta {
     display: flex;
     gap: 2rem;
     font-size: 0.8rem;
     color: var(--gray-text);
+    flex-wrap: wrap;
 }
+
 .post-content {
     font-size: 1rem;
     line-height: 1.85;
     color: var(--text);
 }
+
 .post-content h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     font-style: italic;
     color: var(--olive);
     margin: 2rem 0 1rem;
 }
+
 .post-content h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--olive);
     margin: 1.5rem 0 0.75rem;
 }
+
 .post-content p {
     margin-bottom: 1.15rem;
 }
+
 .post-content ul, .post-content ol {
     margin-left: 1.5rem;
     margin-bottom: 1.15rem;
 }
+
 .post-content li {
     margin-bottom: 0.5rem;
 }
+
 .post-content strong {
     color: var(--olive);
     font-weight: 600;
 }
+
 .post-footer {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--gray-border);
 }
+
 .back-link {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--olive);
     text-decoration: none;
 }
+
 .back-link:hover {
     text-decoration: underline;
 }
 
 /* ========================================
-   ARTICLE PAGE (Alternative naming)
+   ARTICLE PAGE
 ======================================== */
 .article-page {
     padding: 0 2rem 4rem;
     max-width: 750px;
     margin: 0 auto;
 }
+
 .article-page .breadcrumb {
     padding: 1.5rem 0;
 }
+
 .article-header {
     margin-bottom: 2.5rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--gray-border);
 }
+
 .article-tag {
     display: inline-block;
     padding: 0.4rem 0.9rem;
@@ -924,61 +1147,72 @@ main { padding-top: 70px; min-height: 80vh; }
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
+
 .article-header h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
     font-weight: 400;
     font-style: italic;
     color: var(--olive);
     line-height: 1.25;
     margin-bottom: 0.6rem;
 }
+
 .article-meta {
     font-size: 0.8rem;
     color: var(--gray-text);
 }
+
 .article-content {
     font-size: 1rem;
     line-height: 1.85;
     color: var(--text);
 }
+
 .article-intro {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--olive);
     line-height: 1.75;
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--gray-border);
 }
+
 .article-content h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     font-style: italic;
     color: var(--olive);
     margin: 2rem 0 1rem;
 }
+
 .article-content h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--olive);
     margin: 1.5rem 0 0.75rem;
 }
+
 .article-content p {
     margin-bottom: 1.15rem;
 }
+
 .article-content ul, .article-content ol {
     margin-left: 1.5rem;
     margin-bottom: 1.15rem;
 }
+
 .article-content li {
     margin-bottom: 0.5rem;
 }
+
 .article-content strong {
     color: var(--olive);
     font-weight: 600;
 }
+
 .article-cta {
     background: var(--gray-light);
     padding: 2rem;
@@ -986,26 +1220,340 @@ main { padding-top: 70px; min-height: 80vh; }
     margin-top: 2.5rem;
     border: 1px solid var(--gray-border);
 }
+
 .article-cta p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 1.25rem !important;
 }
-.article-cta .btn-primary { margin-right: 0.75rem; }
+
+.article-cta .btn-primary { 
+    margin-right: 0.75rem; 
+}
+
 .article-faq {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--gray-border);
 }
+
 .article-faq h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 400;
     font-style: italic;
     color: var(--olive);
     margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   ABOUT PAGE (SOBRE SÛO)
+======================================== */
+.about-page {
+    padding: 0 2rem 5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.about-story-content {
+    padding-right: 1rem;
+}
+
+.about-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 1rem;
+}
+
+.about-story h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-story-content p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.about-story-image {
+    height: 380px;
+    background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+    border-radius: 2px;
+}
+
+.about-name {
+    background: var(--gray-light);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    border-radius: 2px;
+}
+
+.about-name-box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-name-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--olive);
+    display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2em;
+}
+
+.about-name-box p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+}
+
+.about-name-box em {
+    color: var(--olive);
+    font-style: italic;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.about-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.25rem;
+}
+
+.about-section p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-value {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--gray-light);
+    border-radius: 2px;
+}
+
+.about-value-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.about-value h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+
+.about-value p {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================
+   TIENDA PAGE (STORE)
+======================================== */
+.tienda-galeria {
+    padding: 3rem 2rem;
+    background: var(--gray-light);
+    margin-bottom: 4rem;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-item {
+    height: 280px;
+    background: var(--olive-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.galeria-grande {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: auto;
+}
+
+.galeria-vertical {
+    grid-row: span 2;
+}
+
+.galeria-horizontal {
+    grid-column: span 2;
+}
+
+.tienda-info {
+    padding: 0 2rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tienda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.tienda-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.tienda-content p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.tienda-datos {
+    background: var(--gray-light);
+    padding: 2rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+}
+
+.dato {
+    margin-bottom: 1.5rem;
+}
+
+.dato:last-child {
+    margin-bottom: 0;
+}
+
+.dato h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.5rem;
+}
+
+.dato p {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.dato a {
+    color: var(--olive);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.dato a:hover {
+    text-decoration: underline;
+}
+
+.tienda-mapa {
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.servicios-section {
+    padding: 5rem 2rem;
+    background: var(--gray-light);
+}
+
+.servicios-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio {
+    background: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--gray-border);
+    border-radius: 2px;
+}
+
+.servicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+
+.servicio p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.65;
+    margin: 0;
 }
 
 /* ========================================
@@ -1016,10 +1564,12 @@ main { padding-top: 70px; min-height: 80vh; }
     max-width: 800px;
     margin: 0 auto;
 }
+
 .faq-section-header {
     text-align: center;
     margin-bottom: 2.5rem;
 }
+
 .faq-section-header span {
     display: block;
     font-size: 0.6rem;
@@ -1029,47 +1579,67 @@ main { padding-top: 70px; min-height: 80vh; }
     color: var(--gray-text);
     margin-bottom: 0.5rem;
 }
+
 .faq-section-header h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 300;
     font-style: italic;
     color: var(--olive);
 }
+
 .faq-list {
     border-top: 1px solid var(--gray-border);
 }
+
 .faq-item {
     border-bottom: 1px solid var(--gray-border);
 }
+
 .faq-question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.15rem 0;
+    padding: 1rem 0;
     cursor: pointer;
     list-style: none;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--olive);
     transition: color 0.2s;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
 }
-.faq-question::-webkit-details-marker { display: none; }
-.faq-question:hover { color: var(--olive-dark); }
+
+.faq-question::-webkit-details-marker { 
+    display: none; 
+}
+
+.faq-question:hover { 
+    color: var(--olive-dark); 
+}
+
 .faq-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     color: var(--olive);
     transition: transform 0.3s ease;
     flex-shrink: 0;
     margin-left: 1rem;
 }
-details[open] .faq-icon { transform: rotate(180deg); }
-.faq-answer {
-    padding: 0 0 1.25rem 0;
+
+details[open] .faq-icon { 
+    transform: rotate(180deg); 
 }
+
+.faq-answer {
+    padding: 0 0 1rem 0;
+}
+
 .faq-answer p {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--gray-text);
     line-height: 1.7;
     margin: 0;
@@ -1083,6 +1653,7 @@ details[open] .faq-icon { transform: rotate(180deg); }
     color: var(--white);
     padding: 4rem 2rem 2rem;
 }
+
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -1090,46 +1661,57 @@ details[open] .faq-icon { transform: rotate(180deg); }
     grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem;
 }
+
 .footer-brand h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 1rem;
     letter-spacing: 0.15em;
 }
+
 .footer-brand p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     opacity: 0.7;
     line-height: 1.7;
     max-width: 300px;
 }
+
 .footer-links h4, .footer-location h4 {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     opacity: 0.5;
 }
+
 .footer-links ul {
     list-style: none;
 }
+
 .footer-links li {
     margin-bottom: 0.6rem;
 }
+
 .footer-links a {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--white);
     text-decoration: none;
     opacity: 0.8;
     transition: opacity 0.2s;
 }
-.footer-links a:hover { opacity: 1; }
+
+.footer-links a:hover { 
+    opacity: 1; 
+}
+
 .footer-location p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     line-height: 1.6;
 }
+
 .footer-bottom {
     max-width: 1200px;
     margin: 3rem auto 0;
@@ -1137,406 +1719,417 @@ details[open] .faq-icon { transform: rotate(180deg); }
     border-top: 1px solid rgba(255,255,255,0.1);
     text-align: center;
 }
+
 .footer-bottom p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     opacity: 0.5;
 }
 
 /* ========================================
-   ABOUT PAGE (SOBRE SÛO)
-======================================== */
-.about-page {
-    padding: 0 2rem 5rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.about-story {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 5rem;
-}
-.about-story-content {
-    padding-right: 1rem;
-}
-.about-label {
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--olive);
-    margin-bottom: 1rem;
-}
-.about-story h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--olive);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-.about-story-content p {
-    font-size: 0.95rem;
-    color: var(--gray-text);
-    line-height: 1.85;
-    margin-bottom: 1.5rem;
-}
-.about-story-image {
-    height: 400px;
-    background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
-    border-radius: 2px;
-}
-.about-name {
-    background: var(--gray-light);
-    padding: 4rem 2rem;
-    text-align: center;
-    margin-bottom: 4rem;
-    border-radius: 2px;
-}
-.about-name-box {
-    max-width: 600px;
-    margin: 0 auto;
-}
-.about-name-word {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    font-weight: 400;
-    color: var(--olive);
-    display: block;
-    margin-bottom: 1rem;
-    letter-spacing: 0.2em;
-}
-.about-name-box p {
-    font-size: 1rem;
-    color: var(--gray-text);
-    line-height: 1.7;
-}
-.about-name-box em {
-    color: var(--olive);
-    font-style: italic;
-}
-.about-section {
-    margin-bottom: 3rem;
-}
-.about-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    font-style: italic;
-    color: var(--olive);
-    margin-bottom: 1.5rem;
-}
-.about-section p {
-    font-size: 0.95rem;
-    color: var(--gray-text);
-    line-height: 1.85;
-    margin-bottom: 1.25rem;
-}
-.about-values {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-}
-.about-value {
-    text-align: center;
-    padding: 2rem;
-    background: var(--gray-light);
-    border-radius: 2px;
-}
-.about-value-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-.about-value h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--olive);
-    margin-bottom: 0.75rem;
-}
-.about-value p {
-    font-size: 0.85rem;
-    color: var(--gray-text);
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* ========================================
-   TIENDA PAGE (STORE)
-======================================== */
-.tienda-galeria {
-    padding: 3rem 2rem;
-    background: var(--gray-light);
-    margin-bottom: 4rem;
-}
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.galeria-item {
-    height: 300px;
-    background: var(--olive-light);
-    border-radius: 2px;
-    overflow: hidden;
-}
-.galeria-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.galeria-item.placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.3);
-    font-size: 3rem;
-}
-.galeria-grande {
-    grid-column: span 2;
-    grid-row: span 2;
-    height: auto;
-}
-.galeria-vertical {
-    grid-row: span 2;
-}
-.galeria-horizontal {
-    grid-column: span 2;
-}
-.galeria-cuadrada {
-    grid-column: span 1;
-}
-
-.tienda-info {
-    padding: 0 2rem 5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-.tienda-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-.tienda-content h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--olive);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-}
-.tienda-content p {
-    font-size: 0.95rem;
-    color: var(--gray-text);
-    line-height: 1.85;
-    margin-bottom: 2rem;
-}
-.tienda-datos {
-    background: var(--gray-light);
-    padding: 2rem;
-    border-radius: 2px;
-    margin-bottom: 2rem;
-}
-.dato {
-    margin-bottom: 1.5rem;
-}
-.dato:last-child {
-    margin-bottom: 0;
-}
-.dato h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--olive);
-    margin-bottom: 0.5rem;
-}
-.dato p {
-    font-size: 0.9rem;
-    color: var(--text);
-    margin: 0;
-    line-height: 1.6;
-}
-.dato a {
-    color: var(--olive);
-    text-decoration: none;
-    font-weight: 500;
-}
-.dato a:hover {
-    text-decoration: underline;
-}
-.tienda-mapa {
-    border-radius: 2px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-.tienda-mapa iframe {
-    border-radius: 2px;
-}
-
-.servicios-section {
-    padding: 5rem 2rem;
-    background: var(--gray-light);
-    margin-bottom: 4rem;
-}
-.servicios-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--olive);
-    text-align: center;
-    margin-bottom: 3rem;
-}
-.servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.servicio {
-    background: var(--white);
-    padding: 2rem;
-    text-align: center;
-    border: 1px solid var(--gray-border);
-    border-radius: 2px;
-}
-.servicio h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--olive);
-    margin-bottom: 0.75rem;
-}
-.servicio p {
-    font-size: 0.9rem;
-    color: var(--gray-text);
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* ========================================
-   RESPONSIVE
+   RESPONSIVE - TABLET (1000px)
 ======================================== */
 @media (max-width: 1000px) {
+    .blog-preview-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .features-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .featured-brands-grid { 
+        grid-template-columns: repeat(4, 1fr); 
+    }
+    
+    .story-container { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .story-image { 
+        height: 300px; 
+    }
+    
+    .transition-steps { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .valores-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
+    
+    .footer-container { 
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .blog-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
     .about-story {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    
     .about-story-image {
         height: 300px;
     }
+    
     .about-values {
         grid-template-columns: 1fr;
     }
+    
     .tienda-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+    
     .servicios-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
     .galeria-grande {
         grid-column: span 1;
         grid-row: span 1;
     }
+    
     .galeria-vertical {
         grid-row: span 1;
     }
+    
     .galeria-horizontal {
         grid-column: span 1;
     }
 }
-    .blog-preview-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .featured-brands-grid { grid-template-columns: repeat(4, 1fr); }
-    .story-container { grid-template-columns: 1fr; }
-    .transition-steps { grid-template-columns: 1fr; }
-    .valores-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .footer-container { grid-template-columns: 1fr 1fr; }
-    .blog-grid { grid-template-columns: 1fr; }
-}
 
+/* ========================================
+   RESPONSIVE - MOBILE LANDSCAPE (768px)
+======================================== */
 @media (max-width: 768px) {
-    .header-container { padding: 0.9rem 1.5rem; }
-    .nav-desktop { display: none; }
-    .menu-toggle { display: block; }
+    /* Header */
+    .header-container { 
+        padding: 0.8rem 1.5rem; 
+    }
     
-    .hero { min-height: auto; padding: 3rem 1.5rem; }
-    .hero h1 { font-size: 2.2rem; }
+    .logo {
+        font-size: 1.2rem;
+    }
     
-    .page-hero { padding: 1.5rem 1.5rem 2rem; }
-    .page-hero h1 { font-size: 2rem; }
+    .nav-desktop { 
+        display: none; 
+    }
     
-    .blog-preview-section { padding: 3rem 1.5rem; }
-    .blog-preview-grid { gap: 1.5rem; }
+    .menu-toggle { 
+        display: block; 
+    }
     
-    .features-section { padding: 3rem 1.5rem; }
-    .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    /* Main sections */
+    .hero { 
+        padding: 2.5rem 1.5rem; 
+    }
     
-    .featured-brands-section { padding: 3rem 1.5rem; }
-    .featured-brands-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .hero h1 { 
+        font-size: 1.8rem; 
+    }
     
-    .story-section { padding: 3rem 1.5rem; }
-    .story-container { gap: 2rem; }
-    .story-image { height: 300px; }
+    .page-hero { 
+        padding: 1.5rem 1.5rem 2rem; 
+    }
     
-    .transition-cta-section { padding: 3rem 1.5rem; }
-    .transition-steps { gap: 1.5rem; }
+    .page-hero h1 { 
+        font-size: 1.6rem; 
+    }
     
-    .seleccion-section { padding: 3rem 1.5rem; }
-    .seleccion-grid { grid-template-columns: 1fr; }
+    .seleccion-grid {
+        grid-template-columns: 1fr;
+    }
     
-    .filosofia-section { padding: 3rem 1.5rem; }
+    .blog-preview-section { 
+        padding: 3rem 1.5rem; 
+    }
     
-    .valores-section { padding: 3rem 1.5rem; }
+    .blog-preview-grid { 
+        gap: 1.5rem; 
+    }
     
-    .faq-section { padding: 3rem 1.5rem; }
+    .features-section { 
+        padding: 3rem 1.5rem; 
+    }
     
-    .blog-grid { padding: 0 1.5rem 5rem; }
-    .article-page { padding: 0 1.5rem 4rem; }
+    .features-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
     
-    .about-page { padding: 0 1.5rem 5rem; }
-    .about-story-content { padding-right: 0; }
-    .about-name { padding: 3rem 1.5rem; }
-    .about-name-word { font-size: 2.5rem; }
-    .about-values { grid-template-columns: 1fr; gap: 1rem; }
-    .about-value { padding: 1.5rem; }
+    .featured-brands-section { 
+        padding: 3rem 1.5rem; 
+    }
     
-    .tienda-info { padding: 0 1.5rem 5rem; }
-    .tienda-galeria { padding: 2rem 1.5rem; }
-    .galeria-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .galeria-item { height: 200px; }
-    .servicios-section { padding: 3rem 1.5rem; }
-    .servicios-grid { grid-template-columns: 1fr; }
+    .featured-brands-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 1rem; 
+    }
     
-    .footer { padding: 3rem 1.5rem 1.5rem; }
-    .footer-container { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-    .footer-brand p { max-width: none; }
+    .story-section { 
+        padding: 3rem 1.5rem; 
+    }
+    
+    .transition-cta-section { 
+        padding: 3rem 1.5rem; 
+    }
+    
+    .transition-steps { 
+        gap: 1.5rem; 
+    }
+    
+    .filosofia-section { 
+        padding: 3rem 1.5rem; 
+    }
+    
+    .valores-section { 
+        padding: 3rem 1.5rem; 
+    }
+    
+    .faq-section { 
+        padding: 2.5rem 1.5rem; 
+    }
+    
+    .blog-grid { 
+        padding: 0 1.5rem 5rem; 
+    }
+    
+    .article-page { 
+        padding: 0 1.5rem 4rem; 
+    }
+    
+    .about-page { 
+        padding: 0 1.5rem 5rem; 
+    }
+    
+    .about-name { 
+        padding: 2rem 1.5rem; 
+    }
+    
+    .about-name-word { 
+        font-size: 2.5rem; 
+    }
+    
+    .about-values { 
+        gap: 1rem; 
+    }
+    
+    .about-value { 
+        padding: 1.5rem; 
+    }
+    
+    .tienda-info { 
+        padding: 0 1.5rem 5rem; 
+    }
+    
+    .tienda-galeria { 
+        padding: 2rem 1.5rem; 
+    }
+    
+    .galeria-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem; 
+    }
+    
+    .galeria-item { 
+        height: 200px; 
+    }
+    
+    .servicios-section { 
+        padding: 3rem 1.5rem; 
+    }
+    
+    .servicios-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .footer { 
+        padding: 2.5rem 1.5rem 1.5rem; 
+    }
+    
+    .footer-container { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+        text-align: center; 
+    }
+    
+    .footer-brand p { 
+        max-width: none; 
+    }
 }
 
+/* ========================================
+   RESPONSIVE - MOBILE (480px)
+======================================== */
 @media (max-width: 480px) {
-    .featured-brands-grid { grid-template-columns: 1fr; }
-    .step-number { width: 40px; height: 40px; font-size: 1.2rem; }
-    .blog-preview-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .transition-steps { grid-template-columns: 1fr; }
-    .blog-grid { grid-template-columns: 1fr; }
-    .about-story { gap: 1rem; }
-    .about-story-image { height: 250px; }
-    .about-values { gap: 1rem; }
-    .galeria-grid { grid-template-columns: 1fr; }
-    .galeria-item { height: 250px; }
-    .tienda-datos { padding: 1.5rem; }
+    .header-container { 
+        padding: 0.7rem 1rem; 
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .hero { 
+        padding: 2rem 1rem; 
+        min-height: auto; 
+    }
+    
+    .hero h1 { 
+        font-size: 1.4rem; 
+    }
+    
+    .page-hero { 
+        padding: 1rem 1rem 1.5rem; 
+    }
+    
+    .page-hero h1 { 
+        font-size: 1.4rem; 
+    }
+    
+    .tienda-card {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .tienda-image { 
+        height: 150px; 
+    }
+    
+    .blog-preview-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .blog-preview-card h3 {
+        font-size: 1rem;
+    }
+    
+    .features-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+    
+    .featured-brands-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .step-number { 
+        width: 40px; 
+        height: 40px; 
+        font-size: 1rem; 
+    }
+    
+    .transition-steps { 
+        grid-template-columns: 1fr; 
+        gap: 1rem;
+    }
+    
+    .story-section { 
+        padding: 2rem 1rem; 
+    }
+    
+    .story-container {
+        gap: 1.5rem;
+    }
+    
+    .story-image { 
+        height: 200px; 
+    }
+    
+    .blog-grid { 
+        grid-template-columns: 1fr; 
+        padding: 0 1rem 3rem;
+    }
+    
+    .blog-card-content {
+        padding: 1rem;
+    }
+    
+    .blog-card h2 {
+        font-size: 1rem;
+    }
+    
+    .about-story { 
+        gap: 1rem; 
+    }
+    
+    .about-story-image { 
+        height: 200px; 
+    }
+    
+    .about-story-content {
+        padding-right: 0;
+    }
+    
+    .about-name-word { 
+        font-size: 2rem; 
+    }
+    
+    .about-values { 
+        gap: 0.75rem; 
+    }
+    
+    .about-value { 
+        padding: 1.25rem; 
+    }
+    
+    .about-value-icon {
+        font-size: 1.8rem;
+    }
+    
+    .tienda-galeria { 
+        padding: 1.5rem 1rem; 
+    }
+    
+    .galeria-grid { 
+        grid-template-columns: 1fr; 
+        gap: 0.75rem;
+    }
+    
+    .galeria-item { 
+        height: 180px; 
+    }
+    
+    .tienda-datos { 
+        padding: 1.25rem; 
+    }
+    
+    .dato h4 {
+        font-size: 0.9rem;
+    }
+    
+    .servicios-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .servicio {
+        padding: 1.5rem;
+    }
+    
+    .servicio h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-section { 
+        padding: 2rem 1rem; 
+    }
+    
+    .faq-section-header h2 {
+        font-size: 1.4rem;
+    }
 }
