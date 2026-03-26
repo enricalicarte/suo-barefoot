@@ -30,6 +30,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
+main { padding-top: 70px; }
 
 /* ========================================
    HEADER & NAVIGATION
@@ -1238,4 +1239,524 @@ details[open] .faq-icon { transform: rotate(180deg); }
     .hero { padding: 2rem 1rem; min-height: auto; }
     .hero h1 { font-size: 1.4rem; }
     .products-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   ABOUT PAGE - SOBRE SÛO
+======================================== */
+.about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.about-story-content {
+    padding-right: 2rem;
+}
+
+.about-label {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 1rem;
+}
+
+.about-story-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.about-story-content p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+}
+
+.about-story-image {
+    height: 450px;
+    background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+    border-radius: 2px;
+}
+
+.about-name {
+    background: var(--olive);
+    padding: 4rem 2rem;
+    margin: 0 -2rem 4rem;
+}
+
+.about-name-box {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--white);
+}
+
+.about-name-word {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
+}
+
+.about-name-box p {
+    font-size: 1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.about-name-box strong {
+    font-weight: 600;
+}
+
+.about-name-box em {
+    font-style: italic;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+    max-width: 700px;
+}
+
+.about-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1rem;
+}
+
+.about-section p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--gray-border);
+}
+
+.about-value {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.about-value-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-value h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.5rem;
+}
+
+.about-value p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+/* ========================================
+   TIENDA PAGE - BARCELONA STORE
+======================================== */
+.tienda-galeria {
+    padding: 0 2rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 1rem;
+}
+
+.galeria-item {
+    border-radius: 2px;
+    background-size: cover;
+    background-position: center;
+}
+
+.galeria-grande {
+    grid-row: span 2;
+}
+
+.tienda-info {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tienda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.tienda-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1rem;
+}
+
+.tienda-content > p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.tienda-datos {
+    margin-bottom: 2rem;
+}
+
+.tienda-datos .dato {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.tienda-datos .dato:last-child {
+    border-bottom: none;
+}
+
+.tienda-datos h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 0.5rem;
+}
+
+.tienda-datos p {
+    font-size: 0.95rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+.tienda-datos a {
+    color: var(--olive);
+    text-decoration: none;
+}
+
+.tienda-datos a:hover {
+    text-decoration: underline;
+}
+
+.tienda-mapa {
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--gray-border);
+}
+
+.tienda-mapa iframe {
+    display: block;
+}
+
+.servicios-section {
+    background: var(--gray-light);
+    padding: 4rem 2rem;
+}
+
+.servicios-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio {
+    background: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--gray-border);
+}
+
+.servicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+
+.servicio p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+}
+
+/* ========================================
+   BLOG INDEX PAGE
+======================================== */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.blog-card {
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.blog-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    border-color: var(--olive);
+}
+
+.blog-card-image {
+    height: 180px;
+    background: linear-gradient(135deg, var(--olive-light) 0%, var(--olive) 100%);
+}
+
+.blog-card-content {
+    padding: 1.5rem;
+}
+
+.blog-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+}
+
+.blog-card-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--olive);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.blog-card-content h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-card-content h2 a:hover {
+    text-decoration: underline;
+}
+
+.blog-card-content p {
+    font-size: 0.85rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--olive);
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   BLOG POST / ARTICLE PAGE
+======================================== */
+.blog-post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.post-header .blog-tag {
+    margin-bottom: 1rem;
+}
+
+.post-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--olive);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.post-excerpt {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--gray-text);
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.9;
+}
+
+.post-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--olive);
+    margin: 2.5rem 0 1rem;
+}
+
+.post-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--olive);
+    margin: 2rem 0 0.75rem;
+}
+
+.post-content p {
+    margin-bottom: 1.25rem;
+}
+
+.post-content ul, 
+.post-content ol {
+    margin: 1.25rem 0 1.25rem 1.5rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
+}
+
+.post-content strong {
+    color: var(--olive);
+    font-weight: 600;
+}
+
+.post-content a {
+    color: var(--olive);
+}
+
+.post-content a:hover {
+    text-decoration: none;
+}
+
+.post-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--gray-border);
+}
+
+.back-link {
+    font-size: 0.9rem;
+    color: var(--olive);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE - ABOUT, TIENDA, BLOG
+======================================== */
+@media (max-width: 1000px) {
+    .about-story { grid-template-columns: 1fr; gap: 2rem; }
+    .about-story-content { padding-right: 0; }
+    .about-story-image { height: 300px; }
+    .about-values { grid-template-columns: 1fr; }
+    .tienda-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .about-page { padding: 0 1.5rem 3rem; }
+    .about-name { margin: 0 -1.5rem 3rem; padding: 3rem 1.5rem; }
+    .about-name-word { font-size: 2.5rem; }
+    .galeria-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .galeria-grande { grid-row: auto; height: 250px; }
+    .galeria-item { height: 150px; }
+    .tienda-info { padding: 3rem 1.5rem; }
+    .servicios-section { padding: 3rem 1.5rem; }
+    .blog-grid { padding: 0 1.5rem 3rem; }
+    .blog-post { padding: 0 1.5rem 3rem; }
+    .post-header h1 { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+    .about-story-content h2 { font-size: 1.5rem; }
+    .about-section h2 { font-size: 1.3rem; }
+    .tienda-content h2 { font-size: 1.4rem; }
+    .servicios-section h2 { font-size: 1.4rem; }
+    .blog-card-image { height: 140px; }
 }
