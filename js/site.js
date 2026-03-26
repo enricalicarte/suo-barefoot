@@ -1,8 +1,6 @@
 /**
  * SÛO Barcelona - Site Components
  * Header, Footer, SEO Schema, FAQs
- * 
- * EDITAR DATOS DE LA TIENDA AQUÍ:
  */
 const TIENDA = {
     nombre: 'SÛO Barcelona',
@@ -16,22 +14,13 @@ const TIENDA = {
     pais: 'ES',
     horario: 'L-S: 10:00-13:30 / 16:30-19:30',
     horarioCorto: '10:00-13:30 · 16:30-19:30',
-    horarioSchema: [
-        'Mo-Sa 10:00-13:30',
-        'Mo-Sa 16:30-19:30'
-    ],
-    coordenadas: {
-        lat: 41.3768,
-        lng: 2.1612
-    },
+    horarioSchema: ['Mo-Sa 10:00-13:30', 'Mo-Sa 16:30-19:30'],
+    coordenadas: { lat: 41.3768, lng: 2.1612 },
     año: '2026',
     descripcion: 'Tienda de calzado barefoot en Barcelona. Curaduría de marcas respetuosas con la biomecánica natural del pie.',
     web: 'https://enricalicarte.github.io/suo-barefoot/'
 };
 
-/**
- * FAQs GENERALES DE LA TIENDA
- */
 const FAQS_TIENDA = [
     {
         q: '¿Qué es el calzado barefoot?',
@@ -69,26 +58,45 @@ function renderHeader() {
         <div class="header-container">
             <a href="${root}index.html" class="logo">S Û O</a>
             <nav class="nav-desktop">
-                <!-- <a href="${root}catalogo/index.html">Catálogo</a> -->
-                <!-- <a href="${root}marcas/index.html">Marcas</a> -->
+                <a href="${root}marcas/index.html">Marcas</a>
                 <a href="${root}blog/index.html">Diario Podal</a>
                 <a href="${root}tienda.html">Barcelona Store</a>
                 <a href="${root}sobre.html">Sobre SÛO</a>
             </nav>
-            <button class="menu-toggle" aria-label="Menú" onclick="document.querySelector('.nav-mobile').classList.toggle('active'); this.classList.toggle('active');">
-                <span></span><span></span><span></span>
+            <button class="menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
     </header>
     <nav class="nav-mobile">
-        <!-- <a href="${root}catalogo/index.html">Catálogo</a> -->
-        <!-- <a href="${root}marcas/index.html">Marcas</a> -->
+        <a href="${root}marcas/index.html">Marcas</a>
         <a href="${root}blog/index.html">Diario Podal</a>
         <a href="${root}tienda.html">Barcelona Store</a>
         <a href="${root}sobre.html">Sobre SÛO</a>
     </nav>`;
     
     document.body.insertAdjacentHTML('afterbegin', headerHTML);
+    
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMobile = document.querySelector('.nav-mobile');
+    
+    if (menuToggle && navMobile) {
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMobile.classList.toggle('active');
+            document.body.style.overflow = navMobile.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        navMobile.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMobile.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 }
 
 // ========================================
@@ -106,8 +114,7 @@ function renderFooter() {
             <div class="footer-links">
                 <h4>Boutique</h4>
                 <ul>
-                    <!-- <li><a href="${root}catalogo/index.html">Catálogo</a></li> -->
-                    <!-- <li><a href="${root}marcas/index.html">Marcas</a></li> -->
+                    <li><a href="${root}marcas/index.html">Marcas</a></li>
                     <li><a href="${root}blog/index.html">Diario Podal</a></li>
                     <li><a href="${root}sobre.html">Sobre SÛO</a></li>
                     <li><a href="${root}tienda.html">Barcelona Store</a></li>
@@ -119,9 +126,7 @@ function renderFooter() {
                 <p style="margin-top: 0.75rem;">
                     <a href="${TIENDA.telefonoLink}" style="color: inherit; text-decoration: none;">${TIENDA.telefono}</a>
                 </p>
-                <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #888;">
-                    ${TIENDA.horario}
-                </p>
+                <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #888;">${TIENDA.horario}</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -136,7 +141,7 @@ function renderFooter() {
 }
 
 // ========================================
-// SEO SCHEMA - LocalBusiness
+// SEO SCHEMA
 // ========================================
 function renderLocalBusinessSchema() {
     const schema = {
@@ -160,27 +165,9 @@ function renderLocalBusinessSchema() {
             "latitude": TIENDA.coordenadas.lat,
             "longitude": TIENDA.coordenadas.lng
         },
-        "openingHoursSpecification": TIENDA.horarioSchema.map(h => ({
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": h.split(' ')[1].split('-')[0],
-            "closes": h.split(' ')[1].split('-')[1]
-        })),
         "priceRange": "€€",
         "currenciesAccepted": "EUR",
-        "paymentAccepted": "Cash, Credit Card",
-        "areaServed": {
-            "@type": "City",
-            "name": "Barcelona"
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Calzado Barefoot",
-            "itemListElement": [
-                {"@type": "OfferCatalog", "name": "Calzado Barefoot Infantil"},
-                {"@type": "OfferCatalog", "name": "Calzado Barefoot Mujer"}
-            ]
-        }
+        "paymentAccepted": "Cash, Credit Card"
     };
     
     const script = document.createElement('script');
@@ -189,9 +176,6 @@ function renderLocalBusinessSchema() {
     document.head.appendChild(script);
 }
 
-// ========================================
-// SEO SCHEMA - FAQPage
-// ========================================
 function renderFAQSchema(faqs) {
     if (!faqs || faqs.length === 0) return;
     
@@ -201,10 +185,7 @@ function renderFAQSchema(faqs) {
         "mainEntity": faqs.map(faq => ({
             "@type": "Question",
             "name": faq.q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-            }
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
         }))
     };
     
@@ -215,14 +196,14 @@ function renderFAQSchema(faqs) {
 }
 
 // ========================================
-// FAQ ACCORDION UI
+// FAQ ACCORDION
 // ========================================
 function renderFAQSection(faqs, containerId) {
     const container = document.getElementById(containerId);
     if (!container || !faqs || faqs.length === 0) return;
     
     let html = '<div class="faq-list">';
-    faqs.forEach((faq, i) => {
+    faqs.forEach((faq) => {
         html += `
         <details class="faq-item">
             <summary class="faq-question">
@@ -239,8 +220,6 @@ function renderFAQSection(faqs, containerId) {
     html += '</div>';
     
     container.innerHTML = html;
-    
-    // Render schema for these FAQs
     renderFAQSchema(faqs);
 }
 
@@ -272,19 +251,15 @@ document.addEventListener('DOMContentLoaded', function() {
     renderLocalBusinessSchema();
     updateDataAttributes();
     
-    // Render FAQ section if container exists
-    const faqContainer = document.getElementById('faq-tienda');
-    if (faqContainer) {
+    if (document.getElementById('faq-tienda')) {
         renderFAQSection(FAQS_TIENDA, 'faq-tienda');
     }
     
-    // Custom FAQs for blog articles (set via window.PAGE_FAQS)
     if (window.PAGE_FAQS && document.getElementById('faq-articulo')) {
         renderFAQSection(window.PAGE_FAQS, 'faq-articulo');
     }
 });
 
-// Export for use in other scripts
 window.TIENDA = TIENDA;
 window.FAQS_TIENDA = FAQS_TIENDA;
 window.renderFAQSection = renderFAQSection;
