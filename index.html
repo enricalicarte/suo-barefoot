@@ -25,10 +25,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- IMPORTANTE: Definir SITE_ROOT antes de cargar site.js -->
     <script>window.SITE_ROOT = '';</script>
     
     <style>
+        /* ========================================
+           HOME PAGE SPECIFIC STYLES
+        ======================================== */
         .hero { 
             position: relative; 
             min-height: calc(100vh - 70px); 
@@ -64,7 +66,238 @@
         .transition-cta-section {
             background-color: #000000;
         }
-        @media (max-width: 768px) { 
+
+        /* ========================================
+           BRANDS CAROUSEL SECTION
+        ======================================== */
+        .brands-carousel-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .brands-carousel-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .brands-carousel-header span {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .brands-carousel-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 5vw, 2.6rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--olive);
+            margin-bottom: 0.5rem;
+        }
+
+        .brands-carousel-header p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        /* Desktop Grid */
+        .brands-grid-desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .brand-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray-border);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            border-color: var(--olive);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .brand-logo {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .brand-logo svg {
+            max-width: 120px;
+            max-height: 50px;
+            width: auto;
+            height: auto;
+        }
+
+        .brand-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--olive);
+            margin-bottom: 0.25rem;
+        }
+
+        .brand-card .brand-origin {
+            font-size: 0.7rem;
+            color: var(--gray-text);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .brand-card .brand-arrow {
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: var(--olive-muted);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .brand-card:hover .brand-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Mobile Carousel */
+        .brands-carousel-mobile {
+            display: none;
+            position: relative;
+            overflow: hidden;
+            margin: 0 -2rem;
+            padding: 0 2rem;
+        }
+
+        .brands-carousel-track {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 1rem 0 2rem;
+        }
+
+        .brands-carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .brands-carousel-mobile .brand-card {
+            flex: 0 0 auto;
+            width: 160px;
+            scroll-snap-align: start;
+            padding: 1.5rem 1rem;
+        }
+
+        .brands-carousel-mobile .brand-logo {
+            height: 45px;
+        }
+
+        .brands-carousel-mobile .brand-logo svg {
+            max-width: 90px;
+            max-height: 40px;
+        }
+
+        .brands-carousel-mobile .brand-card h3 {
+            font-size: 0.95rem;
+        }
+
+        .brands-carousel-mobile .brand-arrow {
+            display: none;
+        }
+
+        /* Carousel Indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-border);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--olive);
+            transform: scale(1.2);
+        }
+
+        /* Carousel Navigation Hint */
+        .carousel-hint {
+            display: none;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            margin-top: 0.5rem;
+        }
+
+        .carousel-hint svg {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 0.25rem;
+            animation: swipeHint 1.5s ease-in-out infinite;
+        }
+
+        @keyframes swipeHint {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+
+        /* CTA Link */
+        .brands-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* ========================================
+           RESPONSIVE - Mobile Carousel
+        ======================================== */
+        @media (max-width: 900px) {
+            .brands-grid-desktop {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brands-grid-desktop {
+                display: none;
+            }
+            
+            .brands-carousel-mobile {
+                display: block;
+            }
+
+            .carousel-hint {
+                display: block;
+            }
+
             .hero::before { 
                 width: 100%; 
                 opacity: 0.1; 
@@ -77,7 +310,18 @@
             } 
             .story-image { 
                 height: 300px; 
-            } 
+            }
+
+            .brands-carousel-section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brands-carousel-mobile .brand-card {
+                width: 140px;
+                padding: 1.25rem 0.75rem;
+            }
         }
     </style>
 </head>
@@ -214,54 +458,285 @@
             </div>
         </section>
 
-        <!-- FEATURED BRANDS SECTION -->
-        <section class="featured-brands-section">
-            <div class="featured-brands-header">
+        <!-- BRANDS CAROUSEL SECTION -->
+        <section class="brands-carousel-section">
+            <div class="brands-carousel-header">
                 <span>Nuestras Marcas</span>
                 <h2>Curaduría Selecta</h2>
                 <p>12 marcas de calidad que respetan la biomecánica natural</p>
             </div>
-            <div class="featured-brands-grid">
-                <div class="featured-brand-item">
-                    <div class="brand-circle">F</div>
+
+            <!-- Desktop Grid -->
+            <div class="brands-grid-desktop">
+                <a href="marcas/flexinens.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11" font-weight="600" fill="#6B7A3D" letter-spacing="0.5">FLEXI NENS</text>
+                        </svg>
+                    </div>
                     <h3>Flexinens</h3>
-                    <span class="brand-origin">España</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">M</div>
+                    <span class="brand-origin">Elche, España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/muris.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="18" font-weight="400" fill="#6B7A3D" letter-spacing="3">MURIS</text>
+                        </svg>
+                    </div>
                     <h3>Muris</h3>
-                    <span class="brand-origin">Portugal</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">J</div>
-                    <h3>Joma</h3>
                     <span class="brand-origin">España</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">V</div>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/mustang.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" font-weight="700" fill="#6B7A3D" letter-spacing="1">MUSTANG</text>
+                        </svg>
+                    </div>
+                    <h3>Mustang</h3>
+                    <span class="brand-origin">Elche, España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/victoria.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" font-weight="500" fill="#6B7A3D" letter-spacing="2">VICTORIA</text>
+                        </svg>
+                    </div>
                     <h3>Victoria</h3>
-                    <span class="brand-origin">España</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">I</div>
+                    <span class="brand-origin">España, desde 1915</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/igor.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="16" font-weight="600" fill="#6B7A3D" letter-spacing="4">IGOR</text>
+                        </svg>
+                    </div>
                     <h3>Igor</h3>
                     <span class="brand-origin">España</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">S</div>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/saguaro.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11" font-weight="500" fill="#6B7A3D" letter-spacing="2">SAGUARO</text>
+                        </svg>
+                    </div>
                     <h3>Saguaro</h3>
-                    <span class="brand-origin">España</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">M</div>
-                    <h3>Mustang</h3>
-                    <span class="brand-origin">Alemania</span>
-                </div>
-                <div class="featured-brand-item">
-                    <div class="brand-circle">C</div>
+                    <span class="brand-origin">Internacional</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/chetto.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" font-weight="600" fill="#6B7A3D" letter-spacing="2">CHETTO</text>
+                        </svg>
+                    </div>
                     <h3>Chetto</h3>
                     <span class="brand-origin">España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/conguitos.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" font-weight="600" fill="#6B7A3D" letter-spacing="1">CONGUITOS</text>
+                        </svg>
+                    </div>
+                    <h3>Conguitos</h3>
+                    <span class="brand-origin">España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/blanditos.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="400" font-style="italic" fill="#6B7A3D" letter-spacing="1">Blanditos</text>
+                        </svg>
+                    </div>
+                    <h3>Blanditos</h3>
+                    <span class="brand-origin">España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/andanines.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="13" font-weight="400" fill="#6B7A3D" letter-spacing="1">ANDANINES</text>
+                        </svg>
+                    </div>
+                    <h3>Andanines</h3>
+                    <span class="brand-origin">Elche, España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/lejan.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="14" font-weight="500" fill="#6B7A3D" letter-spacing="3">LEJAN</text>
+                        </svg>
+                    </div>
+                    <h3>Lejan</h3>
+                    <span class="brand-origin">España</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+
+                <a href="marcas/joma.html" class="brand-card">
+                    <div class="brand-logo">
+                        <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="16" font-weight="700" fill="#6B7A3D" letter-spacing="2">JOMA</text>
+                        </svg>
+                    </div>
+                    <h3>Joma</h3>
+                    <span class="brand-origin">España, desde 1965</span>
+                    <span class="brand-arrow">Ver colección →</span>
+                </a>
+            </div>
+
+            <!-- Mobile Carousel -->
+            <div class="brands-carousel-mobile">
+                <div class="brands-carousel-track" id="brandsCarousel">
+                    <a href="marcas/flexinens.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" font-weight="600" fill="#6B7A3D" letter-spacing="0.3">FLEXI NENS</text>
+                            </svg>
+                        </div>
+                        <h3>Flexinens</h3>
+                        <span class="brand-origin">Elche</span>
+                    </a>
+
+                    <a href="marcas/muris.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="16" font-weight="400" fill="#6B7A3D" letter-spacing="2">MURIS</text>
+                            </svg>
+                        </div>
+                        <h3>Muris</h3>
+                        <span class="brand-origin">España</span>
+                    </a>
+
+                    <a href="marcas/mustang.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="11" font-weight="700" fill="#6B7A3D" letter-spacing="0.5">MUSTANG</text>
+                            </svg>
+                        </div>
+                        <h3>Mustang</h3>
+                        <span class="brand-origin">Elche</span>
+                    </a>
+
+                    <a href="marcas/victoria.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="14" font-weight="500" fill="#6B7A3D" letter-spacing="1.5">VICTORIA</text>
+                            </svg>
+                        </div>
+                        <h3>Victoria</h3>
+                        <span class="brand-origin">Desde 1915</span>
+                    </a>
+
+                    <a href="marcas/igor.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="14" font-weight="600" fill="#6B7A3D" letter-spacing="3">IGOR</text>
+                            </svg>
+                        </div>
+                        <h3>Igor</h3>
+                        <span class="brand-origin">España</span>
+                    </a>
+
+                    <a href="marcas/saguaro.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" font-weight="500" fill="#6B7A3D" letter-spacing="1.5">SAGUARO</text>
+                            </svg>
+                        </div>
+                        <h3>Saguaro</h3>
+                        <span class="brand-origin">Internacional</span>
+                    </a>
+
+                    <a href="marcas/chetto.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="12" font-weight="600" fill="#6B7A3D" letter-spacing="1.5">CHETTO</text>
+                            </svg>
+                        </div>
+                        <h3>Chetto</h3>
+                        <span class="brand-origin">España</span>
+                    </a>
+
+                    <a href="marcas/conguitos.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="9" font-weight="600" fill="#6B7A3D" letter-spacing="0.5">CONGUITOS</text>
+                            </svg>
+                        </div>
+                        <h3>Conguitos</h3>
+                        <span class="brand-origin">España</span>
+                    </a>
+
+                    <a href="marcas/blanditos.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="13" font-weight="400" font-style="italic" fill="#6B7A3D" letter-spacing="0.5">Blanditos</text>
+                            </svg>
+                        </div>
+                        <h3>Blanditos</h3>
+                        <span class="brand-origin">España</span>
+                    </a>
+
+                    <a href="marcas/andanines.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="11" font-weight="400" fill="#6B7A3D" letter-spacing="0.5">ANDANINES</text>
+                            </svg>
+                        </div>
+                        <h3>Andanines</h3>
+                        <span class="brand-origin">Elche</span>
+                    </a>
+
+                    <a href="marcas/lejan.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="13" font-weight="500" fill="#6B7A3D" letter-spacing="2">LEJAN</text>
+                            </svg>
+                        </div>
+                        <h3>Lejan</h3>
+                        <span class="brand-origin">España</span>
+                    </a>
+
+                    <a href="marcas/joma.html" class="brand-card">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="14" font-weight="700" fill="#6B7A3D" letter-spacing="1.5">JOMA</text>
+                            </svg>
+                        </div>
+                        <h3>Joma</h3>
+                        <span class="brand-origin">Desde 1965</span>
+                    </a>
                 </div>
+
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+                
+                <p class="carousel-hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                    Desliza para ver más
+                </p>
+            </div>
+
+            <div class="brands-cta">
+                <a href="marcas/index.html" class="btn-outline">Ver todas las marcas →</a>
             </div>
         </section>
 
@@ -351,7 +826,49 @@
 
     <!-- El footer se renderiza dinámicamente via site.js -->
 
-    <!-- IMPORTANTE: Cargar site.js al final del body -->
     <script src="js/site.js"></script>
+    
+    <!-- Carousel Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('brandsCarousel');
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        
+        if (!carousel || !indicatorsContainer) return;
+        
+        const cards = carousel.querySelectorAll('.brand-card');
+        const cardWidth = 160 + 16; // card width + gap
+        const visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
+        const totalPages = Math.ceil(cards.length / Math.max(visibleCards, 2));
+        
+        // Create indicators
+        for (let i = 0; i < Math.min(totalPages, 6); i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Página ${i + 1}`);
+            dot.addEventListener('click', () => {
+                carousel.scrollTo({
+                    left: i * carousel.offsetWidth * 0.8,
+                    behavior: 'smooth'
+                });
+            });
+            indicatorsContainer.appendChild(dot);
+        }
+        
+        // Update indicators on scroll
+        const dots = indicatorsContainer.querySelectorAll('.carousel-dot');
+        
+        carousel.addEventListener('scroll', () => {
+            const scrollPosition = carousel.scrollLeft;
+            const maxScroll = carousel.scrollWidth - carousel.offsetWidth;
+            const scrollPercentage = scrollPosition / maxScroll;
+            const activeIndex = Math.round(scrollPercentage * (dots.length - 1));
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        });
+    });
+    </script>
 </body>
 </html>
